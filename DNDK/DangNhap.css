@@ -21,14 +21,34 @@
     height: 60%;
 }
 
+.container .logo-money{
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    text-align: center;
+}
+
+.logo-money .namew{
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.logo-money img{
+    width: 80%;
+}
+
 .content{
     background-color: #fff;
     width: 500px;
     position: absolute;
-    top: 50%;
-    left: 30%;
-    /* transform: translateX(-50%); */
-    transform: translateY(-50%);
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 0 20px;
     border-radius: 20px;
     text-align: center;
@@ -45,12 +65,19 @@
     margin: auto;
 }
 
-.main-ct .desc{
+.desc{
     color: #707070;
     padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.main-ct .email, .pw{
+    width: 100%;
+    position: relative;
 }
 
 .main-ct input{
+    width: 100%;
    padding: 15px 10px;
    margin-top: 10px;
    background-color: #f5f5f5;
@@ -59,14 +86,23 @@
    outline: #0E86D4; 
 }
 
-/* .main-ct input:hover{
-    outline: #0E86D4;
-} */
+.pw i{
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: 45%;
+} 
 
 .main-ct .forgot{
     color: #3D70FF;
     padding: 10px 0 15px 0;
     text-align: end;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.forgot:hover{
+    color: black;
 }
 
 .main-ct .btn-login{
@@ -77,22 +113,23 @@
     color: #fff;
     font-weight: 600;
     font-size: 17px;
+    cursor: pointer;
+}
+
+.main-ct .btn-login:hover{
+    opacity: 0.8;
 }
 
 .main-ct .noaccount{
     padding: 15px 0 30px 0;
+    font-size: 15px;
 }
 
 .main-ct .register{
     color:#3D70FF;
 }
 
-/* .div-pw{
-    position: relative;
+.noaccount .register:hover{
+    color: black;
 }
 
-.div-pw i{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-} */

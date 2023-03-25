@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./DangNhap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,24 +19,25 @@
         <div class="bg-xam"></div>
 
         <div class="logo-money">
-
+            <img src="/asset/logo_MoneySmart.jpg" alt="">
+            <div class="namew">Money Smart</div>
         </div>
 
         <div class="content">
             <h1 class="log-in">Log In</h1>
-            <div class="main-ct">
-                <p class="desc">Using Money Smart account</p>
-                <input class="email" type="text" placeholder="Email">
-                <input class="ps" type="text" placeholder="Password">
-                <!-- <div class="div-pw">
-                    <input class="ps" type="text" placeholder="Password">
+            <p class="desc">Using Money Smart account</p>
+            <form class="main-ct">
+                <div class="email">
+                     <input type="text" placeholder="Email" required>
+                </div>
+               <div class="pw">
+                    <input type="password" placeholder="Password" required>
                     <i class="fa-solid fa-lock"></i>
-                </div> -->
-                
-                <p class="forgot">Forgot Password</p>
-                <button class="btn-login">LOGIN</button>
-                <p class="noaccount">Don't have an account? <a class="register" href="">Register</a></p>
-            </div>
+               </div>
+                <div class="forgot">Forgot Password</div>
+                <input class="btn-login" type="submit" value="LOGIN"></input>
+                <div class="noaccount">Don't have an account? <a class="register" href="./DangKi.html">Register</a></div>
+            </form>
         </div>
     </div>
 </body>
