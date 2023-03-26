@@ -1,0 +1,10 @@
+- How to Use Git and GitHub in a Team like a Pro:
+https://www.freecodecamp.org/news/how-to-use-git-and-github-in-a-team-like-a-pro/
+- VisGi: Visualizing Git branches: https://ieeexplore.ieee.org/abstract/document/6650522
+- Document of Git: https://git-scm.com/doc
+- Một số câu lệnh cơ bản được sử dụng trong Git:https://shareprogramming.net/tong-hop-35-lenh-git-co-ban/
+- About Branch: 
+	+ https://backlog.com/git-tutorial/vn/stepup/stepup1_1.html
+	+ https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches
+- Basic syntax: 
+	+ 18 basic command: https://intellipaat.com/blog/tutorial/devops-tutorial/git-commands/
