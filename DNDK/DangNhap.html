@@ -27,12 +27,17 @@
             <h1 class="log-in">Log In</h1>
             <p class="desc">Using Money Smart account</p>
             <form class="main-ct">
-                <div class="email">
-                     <input type="text" placeholder="Email" required>
+                <div class="username">
+                     <input id="inputUsername" type="text" placeholder="Username" required>
+                     <p class="alert"></p>
                 </div>
                <div class="pw">
-                    <input type="password" placeholder="Password" required>
-                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" required id = "inputPW">
+                    <p class="alert"></p>
+                    <div id="divlock" onclick="myFunction1()">
+                        <i id="lock" class="fa-solid fa-lock"></i>
+                        <i id="unlock" class="fa-solid fa-unlock"></i>
+                    </div>
                </div>
                 <div class="forgot">Forgot Password</div>
                 <input class="btn-login" type="submit" value="LOGIN"></input>
@@ -40,5 +45,7 @@
             </form>
         </div>
     </div>
+
+    <script src="./DN.js"></script>
 </body>
 </html>

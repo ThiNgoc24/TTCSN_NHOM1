@@ -26,18 +26,27 @@
             <h1 class="log-in">Register</h1>
             <p class="desc">Using Money Smart account</p>
             <form class="main-ct">
-                <div class="email">
-                     <input type="text" placeholder="Email" required>
+                <div class="username">
+                    <input id="inputUsername" type="text" placeholder="Username" required>
+                    <p class="alert"></p>
                 </div>
                <div class="pw">
-                    <input type="password" placeholder="Password" required>
-                    <i class="fa-solid fa-lock"></i>
+                    <input id="inputPW" type="password" placeholder="Password" required>
+                    <p class="alert"></p>
+                    <div id="divlock" onclick="myFunction1()">
+                        <i id="lock" class="fa-solid fa-lock"></i>
+                        <i id="unlock" class="fa-solid fa-unlock"></i>
+                    </div>
                </div>
-                <!-- <div class="forgot">Forgot Password</div> -->
+               <div class="acp-pw">
+                    <input id="input-acpPW" type="password" placeholder="Confirm Password" required>
+                    <p class="alert"></p>
+               </div>
                 <input style="margin-top: 30px;" class="btn-login" type="submit" value="REGISTER"></input>
                 <div class="noaccount">Have you an account? <a class="register" href="./DangNhap.html">Sign In</a></div>
             </form>
         </div>
     </div>
+    <script src="./DK.js"></script>
 </body>
 </html>
