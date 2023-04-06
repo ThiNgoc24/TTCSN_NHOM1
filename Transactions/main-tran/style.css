@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content{
+    background-color: #E4E4E4;
+    height: 100vh;
+}
+.top{
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.wallet-transaction{
+    margin-left: 5%;
+    width: 93%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+.wallet-transaction .box-menu{
+    display: flex;
+}
+.allet-l-box img{
+    margin-right: 10%;
+    width: 100%;
+    width: 60px;
+}
+.allet-r-box{
+    margin-left: 5%;
+    width: 50px;
+}
+.allet-top{
+    display: flex;
+    margin-top: 15%;
+    justify-content: space-around;
+}
+.allet-top .aa{
+    /* font-size: 12px; */
+}
+.felt-right-toolbar{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.felt-right-toolbar .icon{
+    color: grey;
+    font-size: 20px;
+
+}
+.tool-icon{
+    position: relative;
+
+}
+.felt-right-toolbar .ct-text{
+    /* display: none; */
+}
+.ct-text{
+    /* background-color: #1aa333; */
+}
+.tool-icon .icon:hover .ct-text{
+/* position: absolute; */
+top: 50%;
+
+    background-color: #1aa333;
+
+}
+.add-tr .btn-theme{
+    padding: 8px 12px;
+    background-color: #1aa333;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.input-a{
+    display: none;
+}
+.flat-box{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 35%;
+    height: 45%;
+    background-color: #fff;
+    border-radius: 10px;
+    background-color: rgb(239, 236, 236);
+    box-shadow: 0px 5px 5px 5px rgb(196, 194, 194);
+}
+.transaction_content{
+
+}
+.transaction_content{
+
+    text-align: center;
+    align-content: center;
+}
+.transaction_card{
+
+}
+.transaction_card_top{
+    display: flex;
+    width: 100%;
+    height: 52px;
+    border-start-start-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+    top: 0;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.card_top-ct{
+
+}
+.transaction_content-box{
+    position: absolute;
+    top: 26%;
+    left: 37%;
+    
+}
+.icon-c-k i{
+    font-size: 100px;
+      color: grey;
+}
+.text{
+    color: grey;
+    font-size: 24px;
+    line-height: 28px;
+ 
+}
+.month-future:hover p{
+    color: #1aa333;
+}
+
+@media (max-width:768px)
+{
+    .felt-right-toolbar{
+        width: 43%;
+        /* padding-right: 5%; */
+        margin-right: 5%;
+    }
+    .transaction_card_top p{
+        font-size: 10px;
+    }
+}
+@media(max-width:1024px) and (min-width:768px){
+    .felt-right-toolbar{
+        width: 40%;
+    }
+}
