@@ -170,9 +170,7 @@
                             </button> -->
                         </div>
                         <div class="add-tr">
-                            <button class="btn-theme">
-                                <div class="btn_content">ADD TRANSACTION</div>
-                            </button>
+                            <button class="btn-theme">ADD TRANSACTION</button>
                         </div>
                     </div>
                 </div>
@@ -189,17 +187,48 @@
                             </div>
                         </div>
                         <div class="transaction_content-box">
-                            <div class="icon-c-k">
-                            <i class="fa-regular fa-face-smile"></i>
-    
+                            <div class="no-content">
+                                <div class="icon-smile icon-trans">
+                                    <i class="fa-regular fa-face-smile"></i>
+                                </div> 
+                                <div class="icon-cry icon-trans hide">
+                                    <i class="fa-regular fa-face-sad-cry"></i>
+                                </div> 
+                                <div class="text">No transaction</div>
                             </div>
-                            <div class="text">No transaction</div>
+                            <div class="have-content">
+                            </div>
                         </div>
                         
                     </div>
                 </div>
             </div>
         </footer>
+
+        <div class="add-trans">
+            <form class="box-trans">
+                <div class="it group">
+                    <p class="name-input">Category</p>
+                    <input id="type" type="text" placeholder="Select Category">
+                </div>
+                <div class="it money">
+                    <p class="name-input">Amount</p>
+                    <input id="money" type="text" placeholder="0">
+                </div>
+                <div class="it date">
+                    <p class="name-input">Date</p>
+                    <input id="date" type="date">
+                </div>
+                <div class="it note">
+                    <p class="name-input">Note</p>
+                    <input id="note" type="text" placeholder="Note">
+                </div>
+                <div class="btn-submit">
+                    <input class="btn btn-cancel" type="submit" value="CANCEL">
+                    <input class="btn btn-save" type="submit" value="SAVE">
+                </div>
+            </form>
+        </div>
     </div>
     <script src="./app.js"></script>
 </body>

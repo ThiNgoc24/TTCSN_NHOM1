@@ -199,9 +199,7 @@ top: 50%;
     text-align: center;
     align-content: center;
 }
-.transaction_card{
 
-}
 .transaction_card_top{
     display: flex;
     width: 100%;
@@ -215,16 +213,14 @@ top: 50%;
     justify-content: space-around;
 
 }
-.card_top-ct{
 
-}
 .transaction_content-box{
     position: absolute;
     top: 26%;
     left: 37%;
-    
+    transition: hover 0.6s ease-in;
 }
-.icon-c-k i{
+.icon-trans i{
     font-size: 100px;
       color: grey;
 }
@@ -236,6 +232,67 @@ top: 50%;
 }
 .month-future:hover p{
     color: #1aa333;
+}
+
+.add-trans{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color:#03030361;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+}
+
+.add-trans .box-trans{
+    background-color: #fff;
+    height:max-content;
+    margin-top: 50px;
+    width: 350px;
+    padding: 20px;
+}
+
+.box-trans .name-input{
+    color: rgba(0,0,0,.54);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.box-trans .it{
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    padding: 10px 5px;
+    border-radius: 8px;
+}
+
+.box-trans .it:hover{
+    border: 1px solid #000;
+}
+
+.box-trans input{
+    outline: none;
+    border: none;
+    font-size: 15px;
+}
+
+.btn-submit{
+    margin-top: 25px;
+}
+
+.btn-submit .btn{
+    background-color: rgba(0,0,0,.1);
+    padding: 8px;
+    color: #3D70FF;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-submit .btn:hover{
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 .hide{
