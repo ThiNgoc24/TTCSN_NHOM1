@@ -30,12 +30,13 @@ account.addEventListener('click', toggleAccount);
 //add-trans
 var addTrans = document.querySelector('.add-trans');
 var btnAdd = document.querySelector('.btn-theme');
-
+var btnCancel = document.querySelector('.btn-cancel');
 function toggleAddTrans(){
     addTrans.classList.toggle('hide');
 }
 
 btnAdd.addEventListener("click",toggleAddTrans);
+btnCancel.addEventListener('click', toggleAddTrans);
 addTrans.addEventListener('click', (e) => {
     if(e.target == e.currentTarget) toggleAddTrans();
 })
