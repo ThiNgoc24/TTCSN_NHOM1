@@ -52,11 +52,8 @@ function toggleSelectBox(){
 
 group.addEventListener('click', toggleSelectBox);
 
-console.log(options);
-
 options.forEach((option) => {
     option.addEventListener('click', () => {
-        console.log(option);
         selected.innerHTML = option.querySelector("label").innerHTML;
         selectBox.classList.add('hide');
     })
