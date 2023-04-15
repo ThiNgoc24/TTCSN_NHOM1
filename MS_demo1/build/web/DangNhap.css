@@ -1,0 +1,159 @@
+:root{
+    --blue-color: #3D70FF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-blue{
+    background-color: #0E86D4;
+    height: 15rem;
+}
+
+.bg-xam{
+    background-color: #EBEBEB;
+    height: 30rem;
+}
+
+.container .logo-money{
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+.logo-money .namew{
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.logo-money img{
+    width: 80%;
+}
+
+.content{
+    background-color: #fff;
+    width: 500px;
+    position: absolute;
+    top: 26rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 20px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+.content .log-in{
+    padding: 20px 0 10px 0;
+}
+
+.main-ct{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+}
+
+.desc{
+    color: #707070;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.main-ct .email, .pw{
+    width: 100%;
+    position: relative;
+}
+
+.main-ct input{
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px 10px; 
+   background-color: #f5f5f5;
+   border: none;
+   outline: none;
+}
+
+.pw i{
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: 45%;
+} 
+
+.main-ct .forgot{
+    color: var(--blue-color);
+    padding: 10px 0 15px 0;
+    text-align: end;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.forgot:hover{
+    color: black;
+}
+
+.main-ct .btn-login{
+    padding: 10px;
+    background-color: var(--blue-color);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.main-ct .btn-login:hover{
+    opacity: 0.8;
+}
+
+.main-ct .noaccount{
+    padding: 15px 0 30px 0;
+    font-size: 15px;
+}
+
+.main-ct .register{
+    color:var(--blue-color);
+}
+
+.main-ct input:focus{
+    border: 1px solid var(--blue-color);
+}
+
+.noaccount .register:hover{
+    color: black;
+}
+
+#unlock{
+    display: none;
+}
+
+.alert{
+    color: red;
+    font-size: 10px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+@media only screen and (max-width: 600px){
+    
+}
