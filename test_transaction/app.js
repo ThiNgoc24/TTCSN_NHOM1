@@ -40,3 +40,29 @@ addTrans.addEventListener('click', (e) => {
     if(e.target == e.currentTarget) toggleAddTrans();
 })
 
+//menu-option
+var group = document.querySelector('.box-trans .group');
+var selected = document.querySelector('.selected');
+var options = document.querySelectorAll('.options-container .option');
+var selectBox = document.querySelector('.select-box');
+
+function toggleSelectBox(){
+    selectBox.classList.toggle('hide');
+}
+
+group.addEventListener('click', toggleSelectBox);
+
+console.log(options);
+
+options.forEach((option) => {
+    option.addEventListener('click', () => {
+        console.log(option);
+        selected.innerHTML = option.querySelector("label").innerHTML;
+        selectBox.classList.add('hide');
+    })
+})
+
+addTrans.addEventListener('click', (e) => {
+    if(e.target == e.currentTarget) toggleSelectBox();
+})
+

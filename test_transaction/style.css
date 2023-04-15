@@ -283,6 +283,7 @@ top: 50%;
     color: gray;
     cursor: pointer;
     padding-right: 15px;
+    align-items: center;
 }
 
 .main-group .icon-question{
@@ -295,8 +296,68 @@ top: 50%;
     margin-right: 15px;
 }
 
-.main-group .icon-rowRight{
-    margin-right: ;
+.main-group .selected{
+    color: #000 !important;
+    font-size: 18px;
+}
+
+/* Tạo danh sách lựa chọn cho loại dịch vụ */
+.add-trans .select-box{
+    width: 350px;
+    background-color: #fff;
+    height: max-content;
+    padding: 0 15px;
+    padding-top: 15px;
+    margin-left: 1px;
+    margin-top: 120px;
+    font-size: 18px;
+    animation: appearenceSelectBox 0.3s linear;
+}
+
+.select-box .options-container{
+    max-height: 500px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+    /* Tạo hiệu ứng cho thanh cuốn */
+.select-box .options-container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.select-box .options-container::-webkit-scrollbar-track{
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 100px;
+}
+
+.select-box .option{
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.option .icon-option{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.option .icon-option img{
+    width: 100%;
+}
+
+.select-box .option:hover{
+    background-color: #f1f1f1;
+}
+
+.select-box.option label{
+    cursor: pointer;
 }
 
 .btn-submit{
@@ -317,27 +378,6 @@ top: 50%;
     cursor: pointer;
 }
 
-/* .add-trans #options{
-    background-color: #fff;
-} */
-
-/* #options #ops{
-    -webkit-appearance:none;
-   -moz-appearance:none;
-   -ms-appearance:none;
-    appearance: none;
-    outline: none;
-    box-shadow:none;
-    border:0!important;
-    background: #5c6664;
-    background-image: none;
-    flex: 1;
-    padding: 0 20px;
-    cursor:pointer;
-    font-size: 18px;
-    height: 100%;
-} */
-
 .FoodAndBeverage{
     display: flex;
 }
@@ -353,6 +393,16 @@ top: 50%;
 
     to{
         width: 350px;
+    }
+}
+
+@keyframes appearenceSelectBox{
+    from{
+        width: 0;
+    }
+
+    to{
+        width: 500px;
     }
 }
 

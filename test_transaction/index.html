@@ -14,6 +14,7 @@
 </head>
 <body>
     <div class="content">
+        <!-- Nav-bar -->
         <div class="nav-bar">
             <div class="icon icon-menu">
                 <i class="fa-solid fa-bars"></i>
@@ -205,7 +206,8 @@
             </div>
         </footer>
 
-        <div class="add-trans">
+        <!-- Add-transaction -->
+        <div class="add-trans hide">
             <form class="box-trans">
                 <div class="it group">
                     <p class="name-input">Category</p>
@@ -213,46 +215,13 @@
                         <div class="icon-question">
                             <i class="fa-regular fa-question"></i>
                         </div>
-                        <div id="options"> Select Category
-                            <!-- <select name="" id="ops">
-                                <div class="start">
-                                    <option selected disabled>Choose the option</option>
-                                </div>
-                                <div class="FoodAndBeverage">
-                                    <option data-thumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/LetterA.svg/2000px-LetterA.svg.png"
-                                         id="FoodAndBeverage" value="FoodAndBeverage">Food & Beverage</option>
-                                </div>
-                                <div class="Transportation">
-                                    <option id="Transportation" value="Transportation">Transportation</option>
-                                </div>
-                                <div class="Rentals">
-                                    <option id="Rentals" value="Rentals">Rentals</option>
-                                </div>
-                                <div class="Water-Bill">
-                                    <option id="Water-Bill" value="Water-Bill">Water Bill</option>
-                                </div>
-                                <div class="Phone-Bill">
-                                    <option id="Phone-Bill" value="Phone-Bill">Phone Bill</option>
-                                </div>
-                                <div class="Electricity-Bill">
-                                    <option id="Electricity-Bill" value="Electricity-Bill">Electricity Bill</option>
-                                </div>
-                                <div class="Gas-Bill">
-                                    <option id="Gas-Bill" value="Gas-Bill">Gas Bill</option>
-                                </div>
-                                <div class="Television-Bill">
-                                    <option id="Television-Bill" value="Television-Bill">Television Bill</option>
-                                </div>
-                                <div class="Internet-Bill">
-                                    <option id="Internet-Bill" value="Internet-Bill">Internet Bill</option>
-                                </div>
-                                <div class="">
-                                    <option id="Gas-Bill" value="Gas-Bill">Gas Bill</option>
-                                </div>
-                            </select> -->
+                        <div id="options"> 
+                            <div class="selected">
+                                <p style="color: grey; font-size: 16px">Select Category</p>
+                            </div>
                         </div>
                         <div class="icon-rowRight">
-                            <i class="fa-solid fa-chevron-down"></i>
+                            <i class="fa-solid fa-chevron-right"></i>
                         </div>
                     </div>
                 </div>
@@ -273,6 +242,99 @@
                     <input class="btn btn-save" type="submit" value="SAVE">
                 </div>
             </form>
+            
+            <div class="select-box hide">
+                <div class="options-container">
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/ic_category_foodndrink.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="FoodAndBeverage" name="category">
+                        <label for="FoodAndBeverage">Food & Beverage</label>
+                    </div>
+
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/ic_category_transport.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Transportation" name="category">
+                        <label for="Transportation">Transportation</label>
+                    </div>
+
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="	https://static.moneylover.me/img/icon/icon_136.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Rentals" name="category">
+                        <label for="Rentals">Rentals</label>
+                    </div>
+
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/icon_124.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Water-Bill" name="category">
+                        <label for="Water-Bill">Water-Bill</label>
+                    </div>
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/icon_125.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Electricity-Bill" name="category">
+                        <label for="Electricity-Bill">Electricity-Bill</label>
+                    </div>
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/icon_139.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Gas-Bill" name="category">
+                        <label for="Gas-Bill">Gas-Bill</label>
+                    </div>
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/icon_126.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Internet-Bill" name="category">
+                        <label for="Internet-Bill">Internet-Bill</label>
+                    </div>
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="	https://static.moneylover.me/img/icon/ic_category_doctor.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Medical-Checkup" name="category">
+                        <label for="Medical-Checkup">Medical Check-up</label>
+                    </div>
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="	https://static.moneylover.me/img/icon/icon_53.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Pets" name="category">
+                        <label for="Pets">Pets</label>
+                    </div>
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="	https://static.moneylover.me/img/icon/icon_142.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="OutGoing" name="category">
+                        <label for="OutGoing">Out going</label>
+                    </div>
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/icon_49.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Fun-money" name="category">
+                        <label for="Fun-money">Fun money</label>
+                    </div>
+
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/icon_138.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Other" name="category">
+                        <label for="Other">Other <span style="color: grey; font-size: 15px">(write the "Note")</span></label>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./app.js"></script>
