@@ -42,7 +42,8 @@ public class LoginServlet1 extends HttpServlet {
             String password = request.getParameter("Password");
             if(user.equals("thien") && password.equals("123"))
             {
-                System.out.println("<h1>Hello anh chi em nhe</h1>");
+                //out.println("<h1>Hello anh chi em nhe</h1>");
+                response.sendRedirect("transactionPage.html");
             }
             else
                 response.sendRedirect("index.html");
@@ -64,7 +65,7 @@ public class LoginServlet1 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
     }
 
     /**
