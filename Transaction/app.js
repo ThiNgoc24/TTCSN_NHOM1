@@ -41,7 +41,7 @@ addTrans.addEventListener('click', (e) => {
     if(e.target == e.currentTarget) toggleAddTrans();
 })
 
-//menu-option
+//Categories
 var group = document.querySelector('.box-trans .group');
 var selected = document.querySelector('.selected');
 var options = document.querySelectorAll('.options-container .option');
