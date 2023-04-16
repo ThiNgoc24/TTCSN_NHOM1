@@ -99,7 +99,7 @@
                                     <div class="allet-top">  
                                             <span class="aa">aa</span>
                                             <div class="allet-icon">
-                                                <i class="fa-solid fa-caret-down"></i>
+                                                <!-- <i class="fa-solid fa-caret-down"></i> -->
 
                                             </div>
                                     </div>
@@ -230,7 +230,7 @@
                         </div>
                         <div id="options"> 
                             <div class="selected">
-                                <p style="color: grey; font-size: 16px">Select Category</p>
+                                <input id="input1" style="color: grey; font-size: 16px">Select Category...</input>
                             </div>
                         </div>
                         <div class="icon-rowRight">
@@ -251,8 +251,11 @@
                     <input id="note" type="text" placeholder="Note">
                 </div>
                 <div class="btn-submit">
-                    <input class="btn btn-cancel" type="button" value="CANCEL">
-                    <input class="btn btn-save" type="submit" value="SAVE">
+                    <!-- <input class="btn btn-cancel" type="button" value="CANCEL">
+                    <input class="btn btn-save" type="submit" value="SAVE"> -->
+
+                    <input class="btn btn-cancel" type="button" value="CANCEL" id="submit1" onclick="showInfo()">
+                    <input class="btn btn-save" type="submit" value="SAVE" id="submit" disabled>
                 </div>
             </form>
             

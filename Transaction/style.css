@@ -126,7 +126,7 @@
 }
 
 .wallet-transaction{
-    margin-left: 5%;
+    margin-left: 7%;
     width: 93%;
     height: 64px;
     display: flex;
@@ -136,12 +136,12 @@
     display: flex;
 }
 .allet-l-box img{
-    margin-right: 10%;
+    margin-top: 10%;
     width: 100%;
-    width: 60px;
+    width: 50px;
 }
 .allet-r-box{
-    margin-left: 5%;
+    margin-left: 8%;
     width: 50px;
 }
 .allet-top{
@@ -337,7 +337,7 @@ top: 50%;
 }
 
 .select-box .options-container{
-    max-height: 500px;
+    max-height: 400px;
     opacity: 1;
     overflow-y: scroll;
 }
@@ -430,6 +430,28 @@ top: 50%;
 
 @media (max-width:768px)
 {
+    /* nav */
+    .nav-bar{
+        width: 10%;
+    }
+    .nav-bar .name-icon,
+    .wait{
+        display: none;
+    }
+    .mobile .android img{
+        width: 50px;
+        margin-left: -10px;
+    }
+    .mobile  .icon-ios{
+            width: 20px;
+            margin-left: 5px;
+    }
+    /* top */
+    /* bo anh */
+    .show-wallet .allet-l-box {
+        display: none;
+    }
+
     .felt-right-toolbar{
         width: 43%;
         /* padding-right: 5%; */
@@ -438,9 +460,66 @@ top: 50%;
     .transaction_card_top p{
         font-size: 10px;
     }
+    .allet-top,
+    .allet-bt{
+        display: none;
+    }
+    .felt-right-toolbar
+    {
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .tool-icon{
+        margin-left: 5%;
+    }
+    .add-tr{
+        margin-left: 10%;
+    }
+
+    /* flat-box */
+    .flat-box {
+        position: absolute;
+        left: 22%;
+        width: 60%;
+        height: 40%;
+        
+
+    }
+    .transaction_card{
+        position: relative;
+    }
+    .transaction_content-box{
+        position: absolute;
+        top: 126%;
+        left: 26%;
+        transition: hover 0.8s ease-in;
+    }
+    .icon-trans i{
+        font-size: 60px;
+        color: grey;
+    }
+
 }
 @media(max-width:1024px) and (min-width:768px){
     .felt-right-toolbar{
         width: 40%;
+    }
+    .flex-left-toolbar{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .felt-right-toolbar{
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .flat-box {
+        position: absolute;
+        left: 30%;
+        width: 40%;
+        height: 30%;
+        
+
     }
 }
