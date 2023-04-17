@@ -63,8 +63,8 @@ options.forEach((option) => {
 addTrans.addEventListener('click', (e) => {
     if(e.target == e.currentTarget) toggleSelectBox();
 })
-//save
 
+//btn-save
 const input1 = document.getElementById("input1");
 const input2 = document.getElementById("money");
 const submitBtn = document.getElementById("submit");

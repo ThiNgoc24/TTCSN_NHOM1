@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -48,15 +50,11 @@
     bottom: 20px;
 }
 
-.mobile .it-mobile{
-    margin-bottom: 20px;
-}
-
-.it-mobile .icon-mobile{
+.mobile .icon-mobile{
     margin-bottom: -10px !important;
 }
 
-.it-mobile .icon-ios{
+.mobile .icon-ios{
     width: 28px;
     margin: 0 auto;
 }
@@ -172,18 +170,11 @@
     position: relative;
 
 }
-.felt-right-toolbar .ct-text{
-    /* display: none; */
-}
-.ct-text{
-    /* background-color: #1aa333; */
-}
+
 .tool-icon .icon:hover .ct-text{
-/* position: absolute; */
-top: 50%;
-
+    /* position: absolute; */
+    top: 50%;
     background-color: #1aa333;
-
 }
 .add-tr .btn-theme{
     padding: 8px 12px;
