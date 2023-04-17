@@ -154,6 +154,30 @@
     padding-left: 5px;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 678px){
+    .log-in,
+    .forgot{
+        font-size: 16px;
+    }
+    .main-ct{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+    } 
+    .content{
+        background-color: #fff;
+        width: 80%;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 20px;
+        border-radius: 20px;
+        text-align: center;
+    
+    }
+}
+@media only screen and (max-width: 678px) and (min-width: 1024px){
     
 }

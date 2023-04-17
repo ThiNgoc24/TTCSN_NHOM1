@@ -28,13 +28,13 @@
                 <p class="name-icon">Report</p>
             </div>
             <div class="mobile">
-                <div class="it-mobile android">
+                <div class="icon android">
                     <div class="icon-mobile">
                         <img src="../asset/google-play-hero.svg" alt="">
                     </div>
                     <p class="wait">(Coming soon)</p>
                 </div>
-                <div class="it-mobile ios">
+                <div class="icon ios">
                     <div class="icon-mobile icon-ios">
                         <img src="../asset/App_Store.svg.png" alt="">
                     </div>
@@ -100,7 +100,7 @@
                                     <div class="allet-top">  
                                             <span class="aa">aa</span>
                                             <div class="allet-icon">
-                                                <i class="fa-solid fa-caret-down"></i>
+                                                <!-- <i class="fa-solid fa-caret-down"></i> -->
 
                                             </div>
                                     </div>
@@ -126,8 +126,6 @@
                                             <div class="allet-bt">
                                                 <p style="font-weight: 700;font-size: 18px;margin-left: 7%;">0 đ</p>
                                             </div>
-                                            
-                                      
                                         </div>
                                         
                                         <div class="aaa">
@@ -145,13 +143,9 @@
                                                 <div class="allet-bt">
                                                     <p style="font-weight: 700;font-size: 18px;margin-left: 7%;">0 đ</p>
                                                 </div>
-                                                
-                                          
                                             </div>
-                                           
                                         </div>
-                                        </div>
-                              
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -159,8 +153,7 @@
                     <div class="felt-right-toolbar">
                         <div class="tool-icon">
                             <div class="icon">
-                            <i class="fa-solid fa-calendar-days"></i>
-
+                                <i class="fa-solid fa-calendar-days"></i>
                             </div>
                             <!-- <button class="ct-text">
                                 <p>Jump to today</p>
@@ -168,8 +161,7 @@
                         </div>
                         <div class="tool-icon" >
                             <div class="icon">
-                            <i class="fa-solid fa-eye"></i>
-
+                                <i class="fa-solid fa-eye"></i>
                             </div>
                             <!-- <button class="ct-text">
                                 <p>View by transaction</p>
@@ -177,8 +169,7 @@
                         </div>
                         <div class="tool-icon">
                             <div class="icon">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-
+                                <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
                             <!-- <button class="ct-text">
                                 <p>Search</p>
@@ -215,7 +206,6 @@
                             <div class="have-content">
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -232,7 +222,7 @@
                         </div>
                         <div id="options"> 
                             <div class="selected">
-                                <p style="color: grey; font-size: 16px">Select Category</p>
+                                <input id="input1" style="color: grey; font-size: 16px">Select Category...</input>
                             </div>
                         </div>
                         <div class="icon-rowRight">
@@ -253,9 +243,11 @@
                     <input id="note" type="text" placeholder="Note">
                 </div>
                 <div class="btn-submit">
-                    <input class="btn btn-cancel" type="button
-                    " value="CANCEL">
-                    <input class="btn btn-save" type="submit" value="SAVE">
+                    <!-- <input class="btn btn-cancel" type="button" value="CANCEL">
+                    <input class="btn btn-save" type="submit" value="SAVE"> -->
+
+                    <input class="btn btn-cancel" type="button" value="CANCEL" id="submit1" onclick="showInfo()">
+                    <input class="btn btn-save" type="submit" value="SAVE" id="submit" disabled>
                 </div>
             </form>
             
