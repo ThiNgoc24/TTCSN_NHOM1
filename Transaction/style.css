@@ -1,0 +1,516 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content{
+    background-color: #E4E4E4;
+    height: 100vh;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-bar{
+    width: 80px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #BDBDBD;
+    z-index: 98;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav-bar .icon{
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.nav-bar .icon:hover{
+    background-color: #F5F5F5;
+}
+
+.nav-bar .icon .name-icon, .wait{
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 100;
+}
+
+.icon-transaction{
+    color: #3D70FF;
+}
+
+.mobile{
+    position: absolute;
+    bottom: 20px;
+}
+
+.mobile .icon-mobile{
+    margin-bottom: -10px !important;
+}
+
+.mobile .icon-ios{
+    width: 28px;
+    margin: 0 auto;
+}
+
+.icon-mobile img{
+    width: 100%;
+}
+
+.account{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    color: #747474;
+}
+
+.box-account{
+    background-color: #fff;
+    width: 350px;
+    height: 100vh;
+    animation: accountShow 0.1s linear;
+}
+
+.account__namemail{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.accountcontent{
+    border-top: 1px solid #ccc;
+}
+.my-account{
+    display: flex;
+    padding-top: 25px;
+    transition: hover 0.2s;
+}
+
+.my-account .icon{
+    padding: 0 20px;
+    font-size: 25px;
+}
+
+.my-account .name-ct-ac{
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+.my-account:hover{
+    background-color: rgba(0,0,0, 0.03);
+    cursor: pointer;
+}
+
+.top{
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.wallet-transaction{
+    margin-left: 7%;
+    width: 93%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+.wallet-transaction .box-menu{
+    display: flex;
+}
+.allet-l-box img{
+    margin-top: 10%;
+    width: 100%;
+    width: 50px;
+}
+.allet-r-box{
+    margin-left: 8%;
+    width: 50px;
+}
+.allet-top{
+    display: flex;
+    margin-top: 15%;
+    justify-content: space-around;
+}
+
+.felt-right-toolbar{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.felt-right-toolbar .icon{
+    color: grey;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.felt-right-toolbar .icon:hover{
+    color: #000;
+}
+
+.tool-icon{
+    position: relative;
+
+}
+
+.tool-icon .icon:hover .ct-text{
+    /* position: absolute; */
+    top: 50%;
+    background-color: #1aa333;
+}
+.add-tr .btn-theme{
+    padding: 8px 12px;
+    background-color:#3D70FF;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.add-tr .btn-theme:hover{
+    opacity: 0.95;
+}
+
+.input-a{
+    display: none;
+}
+.flat-box{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 35%;
+    height: 45%;
+    background-color: #fff;
+    border-radius: 10px;
+    background-color: rgb(239, 236, 236);
+    box-shadow: 0px 5px 5px 5px rgb(196, 194, 194);
+}
+.transaction_content{
+
+    text-align: center;
+    align-content: center;
+}
+
+.transaction_card_top{
+    display: flex;
+    width: 100%;
+    height: 52px;
+    border-start-start-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+    top: 0;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.transaction_content-box{
+    position: absolute;
+    top: 26%;
+    left: 37%;
+    transition: hover 0.6s ease-in;
+}
+.icon-trans i{
+    font-size: 100px;
+      color: grey;
+}
+.text{
+    color: grey;
+    font-size: 24px;
+    line-height: 28px;
+ 
+}
+.month-future:hover p{
+    color: #1aa333;
+}
+
+.add-trans{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color:#03030361;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+}
+
+.add-trans .box-trans{
+    background-color: #fff;
+    height:max-content;
+    margin-top: 50px;
+    width: 350px;
+    padding: 20px;
+}
+
+.box-trans .name-input{
+    color: rgba(0,0,0,.54);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.box-trans .it{
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    padding: 10px 5px;
+    border-radius: 8px;
+}
+
+.box-trans .it:hover{
+    border: 1px solid #000;
+}
+
+.box-trans input{
+    outline: none;
+    border: none;
+    font-size: 15px;
+}
+
+.box-trans .group .main-group{
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    cursor: pointer;
+    padding-right: 15px;
+    align-items: center;
+}
+
+.main-group .icon-question{
+    background-color: #ccc;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 15px;
+}
+
+.main-group .selected{
+    color: #000 !important;
+    font-size: 18px;
+}
+
+/* Tạo danh sách lựa chọn cho loại dịch vụ */
+.add-trans .select-box{
+    width: 350px;
+    background-color: #fff;
+    height: max-content;
+    padding: 0 15px;
+    padding-top: 15px;
+    margin-left: 1px;
+    margin-top: 120px;
+    font-size: 18px;
+    animation: appearenceSelectBox 0.3s linear;
+}
+
+.select-box .options-container{
+    max-height: 400px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+    /* Tạo hiệu ứng cho thanh cuốn */
+.select-box .options-container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.select-box .options-container::-webkit-scrollbar-track{
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 100px;
+}
+
+.select-box .option{
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.option .icon-option{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.option .icon-option img{
+    width: 100%;
+}
+
+.select-box .option:hover{
+    background-color: #f1f1f1;
+}
+
+.select-box .option label{
+    cursor: pointer;
+}
+
+.btn-submit{
+    margin-top: 25px;
+}
+
+.btn-submit .btn{
+    background-color: rgba(0,0,0,.1);
+    padding: 8px;
+    color: #3D70FF;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-submit .btn:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.FoodAndBeverage{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
+
+@keyframes accountShow {
+    from{
+        width: 0;
+    }
+
+    to{
+        width: 350px;
+    }
+}
+
+@keyframes appearenceSelectBox{
+    from{
+        width: 0;
+    }
+
+    to{
+        width: 500px;
+    }
+}
+
+@media (max-width:768px)
+{
+    /* nav */
+    .nav-bar{
+        width: 10%;
+    }
+    .nav-bar .name-icon,
+    .wait{
+        display: none;
+    }
+    .mobile .android img{
+        width: 50px;
+        margin-left: -10px;
+    }
+    .mobile  .icon-ios{
+            width: 20px;
+            margin-left: 5px;
+    }
+    /* top */
+    /* bo anh */
+    .show-wallet .allet-l-box {
+        display: none;
+    }
+
+    .felt-right-toolbar{
+        width: 43%;
+        /* padding-right: 5%; */
+        margin-right: 5%;
+    }
+    .transaction_card_top p{
+        font-size: 10px;
+    }
+    .allet-top,
+    .allet-bt{
+        display: none;
+    }
+    .felt-right-toolbar
+    {
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .tool-icon{
+        margin-left: 5%;
+    }
+    .add-tr{
+        margin-left: 10%;
+    }
+
+    /* flat-box */
+    .flat-box {
+        position: absolute;
+        left: 22%;
+        width: 60%;
+        height: 40%;
+        
+
+    }
+    .transaction_card{
+        position: relative;
+    }
+    .transaction_content-box{
+        position: absolute;
+        top: 126%;
+        left: 26%;
+        transition: hover 0.8s ease-in;
+    }
+    .icon-trans i{
+        font-size: 60px;
+        color: grey;
+    }
+
+}
+@media(max-width:1024px) and (min-width:768px){
+    .felt-right-toolbar{
+        width: 40%;
+    }
+    .flex-left-toolbar{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .felt-right-toolbar{
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .flat-box {
+        position: absolute;
+        left: 30%;
+        width: 40%;
+        height: 30%;
+        
+
+    }
+}
