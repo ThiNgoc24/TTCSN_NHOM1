@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="content">
-        <!-- Nav-bar_Menu-colume-->
+        <!-- Nav-bar_Menu-left -->
         <div class="nav-bar">
             <div class="icon icon-menu">
                 <i class="fa-solid fa-bars"></i>
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="accountcontent">
-                    <div class="my-account">
+                    <div class="it-ct my-account">
                         <div class="icon">
                             <i class="fa-solid fa-person"></i>
                         </div>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
 
-                    <div class="my-account">
+                    <div class="it-ct my-wallets">
                         <div class="icon">
                             <i class="fa-solid fa-wallet"></i>
                         </div>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
 
-                    <div class="my-account">
+                    <div class="it-ct categories">
                         <div class="icon">
                             <i class="fa-solid fa-shapes"></i>
                         </div>
@@ -211,16 +211,49 @@
         </footer>
 
         <!-- Add-transaction -->
-        <div class="add-trans hide">
+        <div class="add-trans ">
             <form class="box-trans">
-                <div class="it group">
+                <div class="it group group0">
+                    <p class="name-input">Expense/Income</p>
+                    <div class="main-group">
+                        <div class="icon-question">
+                            <i class="fa-solid fa-right-left"></i>
+                        </div>
+                        <div id="options"> 
+                            <div class="selected selected0">
+                                <p style="color: grey; font-size: 16px">Select In/Out</p>
+                            </div>
+                        </div>
+                        <div class="icon-rowRight">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="it group group1">
+                    <p class="name-input">Wallet</p>
+                    <div class="main-group">
+                        <div class="icon-question">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <div id="options"> 
+                            <div class="selected selected1">
+                                <p style="color: grey; font-size: 16px">Select Wallet</p>
+                            </div>
+                        </div>
+                        <div class="icon-rowRight">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="it group group2">
                     <p class="name-input">Category</p>
                     <div class="main-group">
                         <div class="icon-question">
                             <i class="fa-regular fa-question"></i>
                         </div>
                         <div id="options"> 
-                            <div class="selected">
+                            <div class="selected selected2">
                                 <p style="color: grey; font-size: 16px">Select Category</p>
                                 <!-- <input id="input1" style="color: grey; font-size: 16px">Select Category...</input> -->
                             </div>
@@ -250,9 +283,44 @@
                     <input class="btn btn-save" type="submit" value="SAVE" id="submit" disabled>
                 </div>
             </form>
+
+            <!-- Select in/come -->
+            <div class="select-box select-inout hide">
+                <div class="head-selectBox">
+                    <div class="icon-close-selectBox">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <p class="name-selectBox">Expense/Income</p>
+                </div>
+                
+                <div class="options-container">
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/ic_category_salary.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="expense" name="inout">
+                        <label for="expense">Expense</label>
+                    </div>
+
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/icon_94.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="income" name="inout">
+                        <label for="income">Income</label>
+                    </div>
+                </div>
+            </div>
             
             <!-- Categories -->
-            <div class="select-box hide">
+            <div class="select-box select-category hide">
+                <div class="head-selectBox">
+                    <div class="icon-close-selectBox">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <p class="name-selectBox">Category</p>
+                </div>
+
                 <div class="options-container">
                     <div class="option">
                         <div class="icon-option">
@@ -341,6 +409,110 @@
                         </div>
                         <input hidden type="radio" class="radio" id="Other" name="category">
                         <label for="Other">Other <span style="color: grey; font-size: 15px">(write the "Note")</span></label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- select-wallet -->
+            <div class="select-box select-wallet hide">
+                <div class="head-selectBox">
+                    <div class="icon-close-selectBox">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <p class="name-selectBox">Wallet</p>
+                </div>
+
+                <div class="options-container">
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/ic_category_salary.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="cash" name="wallet">
+                        <label for="cash">Cash</label>
+                    </div>
+
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/icon_94.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="card" name="wallet">
+                        <label for="card">Card</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="my-wallets" class="hide">
+        <!-- Header-wallets -->
+        <div class="header">
+            <div class="content-head container">
+                <div class="icon-comeback">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <p class="name-header">My Wallets</p>
+            </div>
+        </div>
+
+        <div class="ct-wallets container">
+            <div class="wallets-out">
+                <!-- My-Cash -->
+                <div class="it cash">
+                    <div class="it-out cash-out">
+                        <p class="name-wallet">Cash</p>
+                        <div class="ct-main">
+                            <div class="icon-wallet">
+                                <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
+                            </div>
+                            <p id="money-cash">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My-Card -->
+                <div class="it card">
+                    <div class="it-out card-out">
+                        <p class="name-wallet">Card</p>
+                        <div class="ct-main">
+                            <div class="icon-wallet">
+                                <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
+                            </div>
+                            <p id="money-card">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My-wallet-detail -->
+            <div class="detail-wallet in-ct hide">
+                <div class="head-detail">
+                    <div class="icon-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <p class="name-wallet-detail">Cash</p>
+                </div>
+                
+                <div class="ct-detail">
+                    <div class="it-detail">
+                        <p class="name-it-detail">Currency</p>
+                        <div class="ct-it-detail currency">
+                            <div class="icon-VN">
+                                <img src="https://static.moneylover.me/img/flag/ic_currency_vnd.png" alt="">
+                            </div>
+                            <p>Viet Nam Dong (VND)</p>
+                        </div>
+                    </div>
+
+                    <div class="it-detail initial">
+                        <p class="name-it-detail">Initial Balance</p>
+                        <div class="ct-it-detail">
+                            <input id="inputMoney" type="text" placeholder="0">
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <input class="btn btn-cancel" type="button" value="CANCEL">
+                        <input class="btn btn-saveMoney " type="submit" value="SAVE">
                     </div>
                 </div>
             </div>
