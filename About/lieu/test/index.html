@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .list-image
+    {
+      display: flex !important;
+    }
+    img{
+      width: 230px;
+    }
+    .kodfun-galeri {
+    display: flex;
+    height: 20rem;
+    gap: 1rem;
+}
+
+.list-image > div {
+    flex: 1;
+    border-radius: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    transition: all .8s cubic-bezier(.25, .4, .45, 1.4);
+
+}
+.list-image > div:hover {
+    flex: 5;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#01c2bf 0, #01c2bf 50%, #fff 50%, #fff 100%);
+    min-height: 100vh;
+}
+.card
+{
+  margin: 2%;
+    position: relative;
+    width: 250px;
+    height: 330px;
+    background: #0000;
+    display: flex;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+.card:hover{
+    width: 200px;
+}
+.card .imgBx
+{
+    position: relative;
+    min-width: 300px;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.card .imgBx img
+{
+    max-width: 200px;
+    transition: 0.5s ease-in-out;
+}
+/* .card:hover .imgBx 
+{
+    transform: rotate(-5deg) translateX(-5px);
+} */
+
+
+  </style>
+</head>
+<body>
+  <div class="list-image">
+    <div class="card">
+      <img src="/About/image/anh1.jpg" onclick="toggleInfo('info1')" class="imgBx">
+      <div id="info1" onclick="toggleInfo('info1')" style="display:none"  >
+      <p>Dinh Hong Lieu</p>
+      <h4>Hoa dong, vui tinh, le phep</h2>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/About/image/anh2.jpg" onclick="toggleInfo('info2')"  class="imgBx">
+      <p id="info2" onclick="toggleInfo('info2')" style="display:none">Thông tin về ảnh 2</p>
+    </div>
+
+    <div class="card">
+      <img src="/About/image/anh3.jpg" onclick="toggleInfo('info3')" class="imgBx">
+      <div id="info3" onclick="toggleInfo('info3')" style="display:none">
+      <p>Dinh Hong Lieu</p>
+      <h4>Hoa dong, vui tinh, le phep</h2>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/About/image/anh4.jpg" onclick="toggleInfo('info4')" class="imgBx">
+      <div id="info4" onclick="toggleInfo('info4')" style="display:none" >
+      <p>Dinh Hong Lieu</p>
+      <h4>Hoa dong, vui tinh, le phep</h2>
+      </div>
+    </div>
+  </div>
+  
+</body>
+<script>
+  function toggleInfo(id) {
+  let element = document.getElementById(id);
+  if (element.style.display === "none") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
+  }
+}
+</script>
+</html>

@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#01c2bf 0, #01c2bf 50%, #fff 50%, #fff 100%);
+    min-height: 100vh;
+}
+.card, .card1
+{
+    position: relative;
+    width: 300px;
+    height: 380px;
+    background: #0000;
+    display: flex;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+.card:hover, .card1:hover{
+    width: 600px;
+}
+.card .imgBx ,
+.card1 .imgBx1 
+{
+    position: relative;
+    min-width: 300px;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.card .imgBx img,
+.card1 .imgBx1 img
+{
+    max-width: 250px;
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover .imgBx img,
+.card1:hover .imgBx1 img 
+{
+    transform: rotate(-35deg) translateX(-20px);
+}
+
+.card .details::before,
+.card1 .details1::before
+{
+    content:'';
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #fff;
+    z-index: 1;
+}
+.card .details h3,
+.card1 .details1 h3
+{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+.card .details  span,
+.card1 .details1  span
+{
+    font-size: 0.65em;
+    font-weight: 300;
+    opacity: 0.85;
+    text-transform: none;
+}
+.card .details h4,
+.card1 .details1 h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+    line-height: 1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+p{
+    color: #fff;
+    font-size: 0.8em;
+    opacity: 0.85;
+}
