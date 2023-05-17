@@ -251,3 +251,9 @@ btnSave.addEventListener('click', () => {
     }
 })
 
+//Move to report
+var myIcon = document.getElementById('myIcon');
+myIcon.onclick = function() {
+    window.open("../Report/index.html");
+}
+

@@ -186,6 +186,8 @@ btnSave.addEventListener('click', () => {
     }
 })
 
-//Remove Transaction
-var pageTransaction = document.querySelector('.icon-transaction');
-// pageTransaction.addEventListener('click', )
+//Move to Transaction
+var pageTransaction = document.getElementById("myIcon");
+pageTransaction.onclick = function() {
+    window.open("../Transaction/index.html");
+}
