@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        let ctx = document.getElementById("myChart").getContext("2d");
+        console.log(ctx)
+        var dataIncome = [];
+        var dataExpense = [];
+
+        //Array of month, inOutID, amount from Transaction.json
+        var month = [];
+        var inOutID = [];
+        var amount = [];
+
+        //Xu ly du lieu
+        async function fetchData(){
+            const response = await fetch("./JsonFile/Transaction.json");
+            const data = await response.json();
+                for (let i = 0; i < data.length; i++) {
+                    month.push(Number(data[i].date.slice(3, 5)));
+                    inOutID.push(data[i].inOutID);
+                    amount.push(data[i].amount)
+                }     
+
+            //get dataIncome, dataExpense
+            for (let i = 1; i <= 12; i++) {
+                let expense = 0;
+                let income = 0;
+                
+                if (month.includes(i)){
+                    for (let j = 0; j < month.length; j++) {
+                        if (month[j] == i) {
+                            if (inOutID[j] === 1) {
+                                expense += amount[j];
+                            } else {
+                                income += amount[j];
+                            }
+                        }
+                    }
+                }
+
+                dataExpense.push(expense);
+                dataIncome.push(income);
+            }
+        }
+
+        fetchData();
+
+        //test data 
+        console.log(dataExpense)
+        console.log(dataIncome)
+
+        //render report
+        var data = {
+            labels: ["January", "February", "Match", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            datasets: [
+                {
+                    label: "Income",
+                    backgroundColor: "blue",
+                    data: dataIncome
+                },
+                {
+                    label: "Expense",
+                    backgroundColor: "red",
+                    data: dataExpense
+                },
+            ]
+        };
+
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: {
+                barValueSpacing: 20,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

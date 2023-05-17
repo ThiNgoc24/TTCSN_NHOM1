@@ -1,0 +1,52 @@
+[
+  {
+    "trasactionID": 1,
+    "userID": 103,
+    "inOutID": 1,
+    "walletID": 205,
+    "categoryID": 1,
+    "amount": 10000,
+    "date": "11/11/2022",
+    "note": "Mua hoa quả"
+  },
+  {
+    "trasactionID": 2,
+    "userID": 103,
+    "inOutID": 2,
+    "walletID": 205,
+    "categoryID": 1,
+    "amount": 20000,
+    "date": "12/11/2022",
+    "note": "Tiền lì xì"
+  },
+  {
+    "trasactionID": 3,
+    "userID": 103,
+    "inOutID": 1,
+    "walletID": 205,
+    "categoryID": 1,
+    "amount": 20000,
+    "date": "13/11/2022",
+    "note": "Mua thức ăn"
+  },
+  {
+    "trasactionID": 4,
+    "userID": 103,
+    "inOutID": 1,
+    "walletID": 206,
+    "categoryID": 1,
+    "amount": 30000,
+    "date": "13/11/2022",
+    "note": "Mua gạo"
+  },
+  {
+    "trasactionID": 5,
+    "userID": 103,
+    "inOutID": 1,
+    "walletID": 206,
+    "categoryID": 1,
+    "amount": 45000,
+    "date": "14/11/2022",
+    "note": "Mua bánh"
+  }
+]
