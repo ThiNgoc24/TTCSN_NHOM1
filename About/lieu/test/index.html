@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +36,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(#01c2bf 0, #01c2bf 50%, #fff 50%, #fff 100%);
+    background: linear-gradient( #3D70FF 0,  #3D70FF 50%, #fff 50%, #fff 100%);
     min-height: 100vh;
 }
 .card
@@ -53,7 +52,15 @@ body{
     transition: 0.5s ease-in-out;
 }
 .card:hover{
-    width: 200px;
+    width: 400px;
+}
+.information
+{
+  display:none;
+  background-color: #fff;
+  margin: 2%;
+  border-radius: 5%;
+  padding: 2%;
 }
 .card .imgBx
 {
@@ -71,40 +78,83 @@ body{
     max-width: 200px;
     transition: 0.5s ease-in-out;
 }
-/* .card:hover .imgBx 
-{
-    transform: rotate(-5deg) translateX(-5px);
-} */
-
-
+.imgBx:hover .information{
+  display: block !important;
+}
   </style>
 </head>
 <body>
   <div class="list-image">
     <div class="card">
       <img src="/About/image/anh1.jpg" onclick="toggleInfo('info1')" class="imgBx">
-      <div id="info1" onclick="toggleInfo('info1')" style="display:none"  >
-      <p>Dinh Hong Lieu</p>
-      <h4>Hoa dong, vui tinh, le phep</h2>
+      <div id="info1" onclick="toggleInfo('info1')" class="information">
+      <p>Name: Đinh Hồng Liễu</p>
+      <p>StudentCode: 2021601817-HTTT01</p>
+      <p>Duty: Font-end</p>
+      <p>Job Future: Tester </p>
+      <p>
+          Contact: 
+          <p>Email: dinhhonglieu3@gmail.com</p>
+          <p style="display: flex;">Fb: <span> <img src="/About/image/qrcode-lieu.jpg" alt="" style="width: 80px;"></span></p>
+      </p>
       </div>
     </div>
     <div class="card">
-      <img src="/About/image/anh2.jpg" onclick="toggleInfo('info2')"  class="imgBx">
-      <p id="info2" onclick="toggleInfo('info2')" style="display:none">Thông tin về ảnh 2</p>
+      <img src="/About/image/lethingoc.jpg" onclick="toggleInfo('info2')"  class="imgBx">
+      <div id="info2" onclick="toggleInfo('info2')" class="information">
+      <p>Name: Lê Thị Ngọc</p>
+      <p>StudentCode: 2021601311-HTTT01</p>
+      <p>Duty: Front-End</p>
+      <p>Job Future: Web designer <i><i class="fa-solid fa-laptop-code"></i></i> </p>
+      <p>Contact:
+        <p> Email: lethingoc20031124@gmail.com</p>
+        <p style="display: flex;">Fb: <span><img src="/About/image/code-ngoc.jpg" alt="" style="width: 80px;"></span></p> 
+
+        </p>
+
+      </div>
     </div>
 
     <div class="card">
-      <img src="/About/image/anh3.jpg" onclick="toggleInfo('info3')" class="imgBx">
-      <div id="info3" onclick="toggleInfo('info3')" style="display:none">
-      <p>Dinh Hong Lieu</p>
-      <h4>Hoa dong, vui tinh, le phep</h2>
+      <img src="/About/image/Thien-SIP.png" onclick="toggleInfo('info3')" class="imgBx">
+      <div id="info3" onclick="toggleInfo('info3')"class="information">
+        <p>Name: Thân Ngọc Thiện</p>
+        <p>StudentCode: 2021602775-HTTT01</p>
+        <p>Duty: Back-end</p>
+        <p>Job Future: Start up <i><i class="fa-solid fa-laptop-code"></i></i> </p>
+        <p>Contact:
+          <p> Email: thien2632003@gmail.com </p>
+          <p style="display: flex;">Fb: <span><img src="/About/image/qrcode-thien.png" alt="" style="width: 80px;"></span></p> 
+  
+          </p>
       </div>
     </div>
     <div class="card">
-      <img src="/About/image/anh4.jpg" onclick="toggleInfo('info4')" class="imgBx">
-      <div id="info4" onclick="toggleInfo('info4')" style="display:none" >
-      <p>Dinh Hong Lieu</p>
-      <h4>Hoa dong, vui tinh, le phep</h2>
+      <img src="/About/image/thuydan2.jpg" onclick="toggleInfo('info4')" class="imgBx">
+      <div id="info4" onclick="toggleInfo('info4')" class="information">
+        <p>Name: Nguyễn Thị Thúy Dân</p>
+        <p>StudentCode: 2021601846-HTTT01</p>
+        <p>Duty: Write Report</p>
+        <p>Job Future: Web developer<i><i class="fa-solid fa-laptop-code"></i></i> </p>
+        <p>Contact:
+          <p> Email: thuydan1608@gmail.com</p>
+          <p style="display: flex;">Fb: <span><img src="/About/image/qrcode-dan.jpg" alt="" style="width: 80px;"></span></p> 
+  
+          </p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/About/image/thidiep.jpg" onclick="toggleInfo('info4')" class="imgBx">
+      <div id="info4" onclick="toggleInfo('info4')" class="information">
+        <p>Name: Nguyễn Thị Điệp</p>
+        <p>StudentCode: 2021601120-HTTT01</p>
+        <p>Duty: Front-End</p>
+        <p>Job Future: Write report <i><i class="fa-solid fa-laptop-code"></i></i> </p>
+        <p>Contact:
+          <p> Email: diepp12112003@gmail.com</p>
+          <p style="display: flex;">Fb: <span><img src="/About/image/qrcode-diep.png" alt="" style="width: 80px;"></span></p> 
+  
+          </p>
       </div>
     </div>
   </div>
