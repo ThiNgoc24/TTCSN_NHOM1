@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>LoginControllerUser</servlet-name>
+        <servlet-class>Controller.LoginControllerUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterControllerUser</servlet-name>
+        <servlet-class>Controller.RegisterControllerUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Testrigistrer</servlet-name>
+        <servlet-class>Controller.Testrigistrer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TransactionControllerUser</servlet-name>
+        <servlet-class>Controller.TransactionControllerUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginControllerUser</servlet-name>
+        <url-pattern>/loginuser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterControllerUser</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TransactionControllerUser</servlet-name>
+        <url-pattern>/tranuser</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
