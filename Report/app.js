@@ -1,6 +1,6 @@
-//REPORT
+    //REPORT
 let ctx = document.getElementById("myChart").getContext("2d");
-
+console.log(ctx)
 var dataIncome = [];
 var dataExpense = [];
 
@@ -12,11 +12,11 @@ var amount = [];
 //Xu ly du lieu
 async function fetchData(){
     const response = await fetch("../JsonFile/Transaction.json");
-    const data = await response.json();
-        for (let i = 0; i < data.length; i++) {
-            month.push(Number(data[i].date.slice(3, 5)));
-            inOutID.push(data[i].inOutID);
-            amount.push(data[i].amount)
+    const data1 = await response.json();
+        for (let i = 0; i < data1.length; i++) {
+            month.push(Number(data1[i].date.slice(3, 5)));
+            inOutID.push(data1[i].inOutID);
+            amount.push(data1[i].amount)
         }     
 
     //get dataIncome, dataExpense
@@ -39,47 +39,44 @@ async function fetchData(){
     dataExpense.push(expense);
     dataIncome.push(income);
     }
- }
 
+    //render report
+    var data = {
+        labels: ["January", "February", "Match", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        datasets: [
+            {
+                label: "Income",
+                backgroundColor: "blue",
+                data: dataIncome
+            },
+            {
+                label: "Expense",
+                backgroundColor: "red",
+                data: dataExpense
+            },
+        ]
+    };
+
+    var myBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: {
+            barValueSpacing: 20,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                    }
+                }]
+            }
+        }
+    });
+}
+
+//goi ham render report
 fetchData();
 
-//test data 
-console.log(dataExpense)
-console.log(dataIncome)
-
-//render report
-var data = {
-    labels: ["January", "February", "Match", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-    datasets: [
-        {
-            label: "Income",
-            backgroundColor: "blue",
-            data: dataIncome
-        },
-        {
-            label: "Expense",
-            backgroundColor: "red",
-            data: dataExpense
-        },
-    ]
-};
-
-var myBarChart = new Chart(ctx, {
-    type: 'bar',
-    data: data,
-    options: {
-        barValueSpacing: 20,
-        scales: {
-            yAxes: [{
-                ticks: {
-                    min: 0,
-                }
-            }]
-        }
-    }
-});
-
-//icon-menu
+    //icon-menu
 var iconMenu = document.querySelector('.icon-menu');
 var account = document.querySelector('.account');
 
@@ -92,7 +89,7 @@ account.addEventListener('click', (e) => {
     if(e.target == e.currentTarget) toggleAccount();
 });
 
-//My-wallets
+    //My-wallets
 var contentMain = document.querySelector('.content');
 var My_wallets = document.getElementById('my-wallets');
 var btn_MyWallets = document.querySelector('.account .my-wallets');
@@ -113,7 +110,7 @@ iconCombackTrans.addEventListener('click', () => {
 })
 
 
-//Content-My-Wallets
+    //Content-My-Wallets
 var detailWallet = document.querySelector('.detail-wallet');
 var cash_out = document.querySelector('.cash-out');
 var card_out = document.querySelector('.card-out');
@@ -123,14 +120,6 @@ var btnCancelWallet = document.querySelector('.detail-wallet .btn-cancel');
 var inputMoney = document.getElementById('inputMoney');
 var btnSave = document.querySelector('.detail-wallet .btn-saveMoney');
 var btnCancelWallet = document.querySelector('.detail-wallet .btn-cancel');
-
-function toggleCardOut(){
-    card_out.classList.toggle('hide');
-}
-
-function toggleCashOut(){
-    cash_out.classList.toggle('hide');
-}
 
 function toggleDetailWallet(){
     detailWallet.classList.toggle('hide');
@@ -186,8 +175,5 @@ btnSave.addEventListener('click', () => {
     }
 })
 
-//Move to Transaction
-var pageTransaction = document.getElementById("myIcon");
-pageTransaction.onclick = function() {
-    window.open("../Transaction/index.html");
-}
+    //Move to Transaction
+

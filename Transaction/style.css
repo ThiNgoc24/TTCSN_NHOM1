@@ -34,6 +34,7 @@ body{
 .nav-bar .icon{
     padding: 20px 0;
     cursor: pointer;
+    color: #BDBDBD;
 }
 
 .nav-bar .icon:hover{
@@ -46,8 +47,10 @@ body{
     font-weight: 100;
 }
 
-.icon-transaction{
-    color: #3D70FF;
+.icon-transaction,
+.icon-report{
+    display: block;
+    text-decoration: none;
 }
 
 .mobile{
