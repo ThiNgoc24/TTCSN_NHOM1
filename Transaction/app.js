@@ -140,23 +140,6 @@ selectBoxs.forEach((selectBox) => {
     })
 })
 
-//btn-save
-const input1 = document.getElementById("input1");
-const input2 = document.getElementById("money");
-const submitBtn = document.getElementById("submit");
-
-function checkInputs() {
-  if (input1.value && input2.value && input3.value) {
-    submitBtn.disabled = false;
-  } else {
-    submitBtn.disabled = true;
-  }
-}
-
-// input1.addEventListener("input", checkInputs);
-// input2.addEventListener("input", checkInputs);
-
-
 //My-wallets
 var contentMain = document.querySelector('.content');
 var My_wallets = document.getElementById('my-wallets');
