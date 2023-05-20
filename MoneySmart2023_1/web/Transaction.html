@@ -150,29 +150,30 @@
                         </div>
                     </div>
                     <div class="felt-right-toolbar">
-                        <div class="tool-icon">
+                        <div class="tool-icon icon_date">
                             <div class="icon">
                                 <i class="fa-solid fa-calendar-days"></i>
                             </div>
-                            <!-- <button class="ct-text">
-                                <p>Jump to today</p>
-                            </button> -->
+
+                            <div class="search-date hide">
+                                <i class="fa-solid fa-caret-down"></i>
+                                <form class="main-search-date">
+                                    <input id="input_search" type="text" placeholder="">
+                                    <input id="btn-search" type="submit">
+                                </form>
+                                
+                            </div>
                         </div>
+
                         <div class="tool-icon" >
                             <div class="icon">
                                 <i class="fa-solid fa-eye"></i>
                             </div>
-                            <!-- <button class="ct-text">
-                                <p>View by transaction</p>
-                            </button> -->
                         </div>
                         <div class="tool-icon">
                             <div class="icon">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
-                            <!-- <button class="ct-text">
-                                <p>Search</p>
-                            </button> -->
                         </div>
                         <div class="add-tr">
                             <button class="btn-theme">ADD TRANSACTION</button>
@@ -276,15 +277,12 @@
                     <input id="note" type="text" placeholder="Note">
                 </div>
                 <div class="btn-submit">
-                    <!-- <input class="btn btn-cancel" type="button" value="CANCEL">
-                    <input class="btn btn-save" type="submit" value="SAVE"> -->
-
                     <input class="btn btn-cancel" type="button" value="CANCEL" id="submit1" onclick="showInfo()">
                     <input class="btn btn-save" type="submit" value="SAVE" id="submit" disabled>
                 </div>
             </form>
 
-            <!-- Select in/come -->
+            <!-- Select in/out -->
             <div class="select-box select-inout hide">
                 <div class="head-selectBox">
                     <div class="icon-close-selectBox">
@@ -312,8 +310,8 @@
                 </div>
             </div>
             
-            <!-- Categories -->
-            <div class="select-box select-category hide">
+            <!-- Categories of Expense-->
+            <div class="select-box select-category categoriesExpense hide">
                 <div class="head-selectBox">
                     <div class="icon-close-selectBox">
                         <i class="fa-solid fa-xmark"></i>
@@ -408,7 +406,35 @@
                             <img src="https://static.moneylover.me/img/icon/icon_138.png" alt="">
                         </div>
                         <input hidden type="radio" class="radio" id="Other" name="category">
-                        <label for="Other">Other <span style="color: grey; font-size: 15px">(write the "Note")</span></label>
+                        <label for="Other">Other Expense<span style="color: grey; font-size: 15px">(write the "Note")</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories of Income-->
+            <div class="select-box select-category categoriesIncome hide">
+                <div class="head-selectBox">
+                    <div class="icon-close-selectBox">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <p class="name-selectBox">Category</p>
+                </div>
+
+                <div class="options-container">
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/ic_category_foodndrink.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Salary" name="category">
+                        <label for="Salary">Salary</label>
+                    </div>
+
+                    <div class="option">
+                        <div class="icon-option">
+                            <img src="https://static.moneylover.me/img/icon/ic_category_foodndrink.png" alt="">
+                        </div>
+                        <input hidden type="radio" class="radio" id="Other_Income" name="category">
+                        <label for="Other_Income">Other Income</label>
                     </div>
                 </div>
             </div>

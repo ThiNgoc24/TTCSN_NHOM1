@@ -169,6 +169,44 @@ body{
     color: #000;
 }
 
+.icon-date{
+    position: relative;
+}
+
+.icon_date .search-date{
+    position: absolute;
+    top: 30px;
+    left: 3px;
+    /* height: 50px; */
+}
+
+.search-date .main-search-date{
+    display: flex;
+}
+
+.main-search-date #input_search{
+    height: 35px;
+    width: 200px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.main-search-date #btn-search{  
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #3D70FF;
+    color: #fff;
+}
+
+#btn-search:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
 .tool-icon{
     position: relative;
 

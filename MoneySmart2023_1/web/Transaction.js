@@ -63,29 +63,6 @@ addTrans.addEventListener('click', (e) => {
     }
 })
 
-//Select Expense/Income
-var group0 = document.querySelector('.box-trans .group0');
-var selectInOut = document.querySelector('.select-inout');
-var selected0 = document.querySelector('.selected0');
-var options0 = document.querySelectorAll('.select-inout .option');
-
-function toggleSelectInOut(){
-    selectInOut.classList.toggle('hide');
-}
-
-group0.addEventListener('click', () => {
-    toggleSelectInOut();
-    noneSelectCategory();
-    noneSelectWallet();
-});
-
-options0.forEach((option) => {
-    option.addEventListener('click', () => {
-        selected0.innerHTML = option.querySelector("label").innerHTML;
-        selectInOut.classList.add('hide');
-    })
-})
-
 //Select-Wallet
 var group1 = document.querySelector('.box-trans .group1');
 var selected1 = document.querySelector('.selected1');
@@ -109,28 +86,72 @@ options1.forEach((option) => {
     })
 })
 
-//Select Category
+//Select Category of Expense
 var group2 = document.querySelector('.box-trans .group2');
 var selected2 = document.querySelector('.selected2');
-var options2 = document.querySelectorAll('.select-category .option');
+var options2 = document.querySelectorAll('.categoriesExpense .option'); //Mảng chứa tất cả các option của Expense
+var options2_2 = document.querySelectorAll('.categoriesIncome .option'); //Mảng chứa tất cả các option của Income
 var selectCategory = document.querySelector('.select-category');
+var categoriesIncome = document.querySelector(".categoriesIncome");
+var categoriesExpense = document.querySelector(".categoriesExpense");
 
-function toggleSelectCategory(){
-    selectCategory.classList.toggle('hide');
-}
+        //Select Expense/Income
+        var group0 = document.querySelector('.box-trans .group0');
+        var selectInOut = document.querySelector('.select-inout');
+        var selected0 = document.querySelector('.selected0');
+        var options0 = document.querySelectorAll('.select-inout .option');
 
-group2.addEventListener('click', ()=> {
-    toggleSelectCategory();
-    noneSelectWallet();
-    noneSelectInOut();
-});
+        function toggleSelectInOut(){
+            selectInOut.classList.toggle('hide');
+        }
+
+        group0.addEventListener('click', () => {
+            toggleSelectInOut();
+            noneSelectCategory();
+            noneSelectWallet();
+        });
+
+        options0.forEach((option) => {
+            option.addEventListener('click', () => {
+                selected0.innerHTML = option.querySelector("label").innerHTML;
+                selectInOut.classList.add('hide');
+
+                if(selected0.innerHTML === "Income"){
+                    group2.addEventListener('click', ()=> {
+                        if(!categoriesExpense.classList.contains("hide")){
+                            categoriesExpense.classList.add('hide');
+                        }
+                        categoriesIncome.classList.remove('hide');
+                        noneSelectWallet();
+                        noneSelectInOut();
+                    });
+                } else if(selected0.innerHTML === "Expense"){
+                    group2.addEventListener('click', ()=> {
+                        if(!categoriesIncome.classList.contains("hide")){
+                            categoriesIncome.classList.add('hide');
+                        }
+                        categoriesExpense.classList.remove('hide');
+                        noneSelectWallet();
+                        noneSelectInOut();
+                    });
+                }
+            })
+        })
 
 options2.forEach((option) => {
     option.addEventListener('click', () => {
         selected2.innerHTML = option.querySelector("label").innerHTML;
-        selectCategory.classList.add('hide');
+        categoriesExpense.classList.add('hide');
     })
 })
+
+options2_2.forEach((option) => {
+    option.addEventListener('click', () => {
+        selected2.innerHTML = option.querySelector("label").innerHTML;
+        categoriesIncome.classList.add('hide');
+    })
+})
+
 
 //icon-close-selectBox
 var selectBoxs = document.querySelectorAll('.select-box');
@@ -251,4 +272,11 @@ btnSave.addEventListener('click', () => {
     }
 })
 
+//Search date
+var search_date = document.querySelector('.search-date');
+var icon_date = document.querySelector('.icon_date .icon');
+
+icon_date.addEventListener('click', () => {
+    search_date.classList.toggle('hide');
+})
 
