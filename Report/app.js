@@ -175,5 +175,4 @@ btnSave.addEventListener('click', () => {
     }
 })
 
-    //Move to Transaction
 
