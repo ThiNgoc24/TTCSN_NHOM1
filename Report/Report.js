@@ -1,6 +1,5 @@
-    //REPORT
+    //REPORT ALLOW YEAR
 let ctx = document.getElementById("myChart").getContext("2d");
-console.log(ctx)
 var dataIncome = [];
 var dataExpense = [];
 
@@ -8,6 +7,7 @@ var dataExpense = [];
 var month = [];
 var inOutID = [];
 var amount = [];
+
 
 //Xu ly du lieu
 async function fetchData(){
@@ -40,7 +40,7 @@ async function fetchData(){
     dataIncome.push(income);
     }
 
-    //render report
+    //render report allow year
     var data = {
         labels: ["January", "February", "Match", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         datasets: [
@@ -68,13 +68,116 @@ async function fetchData(){
                         min: 0,
                     }
                 }]
-            }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Report allow year',
+                    font: {
+                        size: 30
+                    }
+                },
+            },
         }
     });
 }
 
-//goi ham render report
+//call function render report allow year
 fetchData();
+
+    //REPORT ALLOW MONTH
+var myChart2 = document.getElementById("myChart2").getContext("2d");;
+var dataIncomeMonth = [];
+var dataExpenseMonth = [];
+
+//array day, inout, amount
+var day = [];
+var inOutID2 = [];
+var amount2 = [];
+
+//get label day
+labelDays = []
+for(let i = 1; i <= 31; i++){
+    labelDays.push(i);
+}
+
+//function render data allow month
+async function fetchDataMonth(){
+    const response2 = await fetch("../JsonFile/Transaction.json");
+    const data2 = await response2.json();
+
+    //get data day, inout, amount
+    for(let i = 0; i < data2.length; i++){
+        day.push(Number(data2[i].date.slice(0, 2)));
+        inOutID2.push(data2[i].inOutID);
+        amount2.push(data2[i].amount)
+    }
+
+    //get data allow month (data in one month)
+    for(let i = 1; i <= 31; i++){
+        let expense2 = 0;
+        let income2 = 0;
+        if(day.includes(i)){
+            if(inOutID2[i] === 1){
+                expense2 += amount2[i];
+            }else{
+                income2 += amount2[i];
+            }
+        }
+
+        //push data
+        dataExpenseMonth.push(expense2);
+        dataIncomeMonth.push(income2);
+    }
+
+    //render report allow month
+    var data2_2 = {
+        labels: labelDays,
+        datasets: [
+            {
+                label: "Income",
+                backgroundColor: "blue",
+                data: dataIncomeMonth
+            },
+            {
+                label: "Expense",
+                backgroundColor: "red",
+                data: dataExpenseMonth
+            },
+        ]
+    };
+
+    var myBarChar2 = new Chart(myChart2, {
+        type: 'bar',
+        data: data2_2,
+        options: {
+            barValueSpacing: 20,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                    }
+                }]
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Report allow month',
+                    font: {
+                        size: 30
+                    }
+                },
+            },
+        }
+    });
+}
+
+//call function render report allow month
+fetchDataMonth()
+
+    //REPORT CATEGORY EXPENSE
+var myChart3 = document.getElementById("myChart3").getContext('2d');
+
 
     //icon-menu
 var iconMenu = document.querySelector('.icon-menu');
