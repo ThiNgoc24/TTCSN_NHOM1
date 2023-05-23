@@ -177,7 +177,152 @@ fetchDataMonth()
 
     //REPORT CATEGORY EXPENSE
 var myChart3 = document.getElementById("myChart3").getContext('2d');
+var myChart4 = document.getElementById("myChart4").getContext('2d');
 
+var dataCategoryExpense  = [];
+var dataCategoryIncome = [];
+
+//chuẩn bị dữ liệu
+//bảng màu
+var colors = ["red", "yellow", "green", "blue", "orange", "#ccc", "pink", "#AE5CAD", "#34ADB5", "#FE5A5E", "#6FA917", "#CF8500", "#027B83", "#FF965F"];
+
+//function render report category Expense
+async function fetchDataCategory(){
+    //Lay du lieu tu file category
+    const response = await fetch("../JsonFile/Category.json");
+    const data = await response.json();
+
+    //lay du lieu goc tu file category
+    let categoryIDOrigin = data.map((item) => item.categoryID);
+    let categoryNameOrigin = data.map((item) => item.categoryName);
+
+    //tach du lieu goc thanh ID Expense và ID Income
+    let categoryIDOriginExpenses = categoryIDOrigin.filter((item) => (item >= 1 && item <= 12))
+    let categoryIDOriginIncomes = categoryIDOrigin.filter((item) => item > 12);
+
+    //Lay du lieu tu file Transaction
+    const response2 = await fetch("../JsonFile/Transaction.json");
+    const data2 = await response2.json();
+    let amount = data2.map((item) => item.amount); //money in trans
+    let categoryIDTrans = data2.map((item) => item.categoryID);
+
+    //tach id thanh 2 mang expense va income (cac phan tu khong trung lap)
+    let idDiffExpenses = [];
+    let idDiffIncomes = [];
+
+    for(let i = 0; i < categoryIDTrans.length; i++){
+        if(categoryIDOriginExpenses.includes(categoryIDTrans[i]) && !idDiffExpenses.includes(categoryIDTrans[i])){
+            idDiffExpenses.push(categoryIDTrans[i]);
+        }
+        if(categoryIDOriginIncomes.includes(categoryIDTrans[i]) && !idDiffIncomes.includes(categoryIDTrans[i])){
+            idDiffIncomes.push(categoryIDTrans[i]);
+        }
+    }
+    
+    //Prep labels
+    let labelCategoryExpenses = idDiffExpenses.map((item) => categoryNameOrigin[item]);
+    let labelCategoryIncomes = idDiffIncomes.map((item) => categoryNameOrigin[item]);
+    
+    //Prep Background color
+    let bgcExpenses = idDiffExpenses.map((item) => colors[item]);
+    let bgcIncomes = idDiffIncomes.map((item) => colors[item]);
+
+    //Prep data money
+    for(let i = 0; i < idDiffExpenses.length; i++){
+        let amountExpense = 0;
+        for(let j = 0; j < categoryIDTrans.length; j++){
+            if(categoryIDTrans[j] == idDiffExpenses[i]){
+                amountExpense += amount[j];
+            }
+        }
+        dataCategoryExpense.push(amountExpense);
+    }
+
+    for(let i = 0; i < idDiffIncomes.length; i++){
+        let amountIncome = 0;
+        for(let j = 0; j < categoryIDTrans.length; j++){
+            if(categoryIDTrans[j] == idDiffIncomes[i]){
+                amountIncome += amount[j];
+            }
+        }
+        dataCategoryIncome.push(amountIncome);
+    }
+
+    //render report allow category expense
+    var data1 = {
+        labels: labelCategoryExpenses,
+        datasets: [
+            {
+                label: "Expenses",
+                backgroundColor: bgcExpenses,
+                data: dataCategoryExpense,
+            },
+        ]
+    };
+
+    var myPieChar1 = new Chart(myChart3, {
+        type: 'pie',
+        data: data1,
+        options: {
+            barValueSpacing: 20,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                    }
+                }]
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Report allow category expense',
+                    font: {
+                        size: 20
+                    }
+                },
+            },
+        }
+    });
+
+    //render report allow category income
+    var data3 = {
+        labels: labelCategoryIncomes,
+        datasets: [
+            {
+                label: "Income",
+                backgroundColor: bgcIncomes,
+                data: dataCategoryIncome,
+            },
+        ]
+    };
+
+    var myPieChart2 = new Chart(myChart4, {
+        type: 'pie',
+        data: data3,
+        options: {
+            barValueSpacing: 20,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                    }
+                }]
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Report allow category income',
+                    font: {
+                        size: 20
+                    }
+                },
+            },
+        }
+    });
+}
+
+//call function report category
+fetchDataCategory();
 
     //icon-menu
 var iconMenu = document.querySelector('.icon-menu');
