@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <link rel="stylesheet" href="../Transaction/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <style>
+        #myChart2{
+            margin-top: 50px;
+        }
+
+        #myChart3{
+            margin-right: 50px;
+        }
+
+        .chartCategory{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="content" style="background-color: #fff;">
+        <!-- Nav-bar_Menu-left -->
+        <div class="nav-bar">
+            <div class="icon icon-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            <a href="../Transaction/index.html" class="icon icon-transaction" style="color: #BDBDBD">
+                <i class="fa-solid fa-house"></i>
+                <p class="name-icon">Transaction</p>
+            </a>
+            <a class="icon icon-report" style="color: #3D70FF;">
+                <i class="fa-solid fa-inbox"></i>
+                <p class="name-icon">Report</p>
+            </a>
+            <a href="../About/About.html" class="icon icon-report">
+                <i class="fa-solid fa-address-card"></i>
+                <p class="name-icon">About Us</p>
+            </a>
+            <div class="mobile">
+                <div class="icon android">
+                    <div class="icon-mobile">
+                        <img src="../asset/google-play-hero.svg" alt="">
+                    </div>
+                    <p class="wait">(Coming soon)</p>
+                </div>
+                <div class="icon ios">
+                    <div class="icon-mobile icon-ios">
+                        <img src="../asset/App_Store.svg.png" alt="">
+                    </div>
+                    <p class="wait">(Coming soon)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="account hide">
+            <div class="box-account">
+                <div class="account__namemail">
+                    <p class="mail">lethingoc20031124@gmail.com</p>
+                </div>
+
+                <div class="accountcontent">
+                    <div class="it-ct my-account">
+                        <div class="icon">
+                            <i class="fa-solid fa-person"></i>
+                        </div>
+
+                        <div class="name-ct-ac">
+                            <p>My account</p> 
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+
+                    <div class="it-ct my-wallets">
+                        <div class="icon">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+
+                        <div class="name-ct-ac">
+                            <p>My Wallets</p> 
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+
+                    <div class="it-ct categories">
+                        <div class="icon">
+                            <i class="fa-solid fa-shapes"></i>
+                        </div>
+
+                        <div class="name-ct-ac">
+                            <p>Categories</p> 
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <head>
+            <div class="top">
+                <div class="wallet-transaction">
+                    <div class="flex-left-toolbar">
+                        <div class="show-wallet">
+                            <div class="box-menu">
+                                <div class="allet-l-box">
+                                    <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
+                                </div>
+                                <div class="allet-r-box">
+                                    <div class="allet-top">  
+                                            <span class="aa">aa</span>
+                                            <div class="allet-icon">
+                                                <i class="fa-solid fa-caret-down"></i>
+                                            </div>
+                                    </div>
+                                    <div class="allet-bt">
+                                        <p style="font-weight: 700;font-size: 18px;margin-left: 7%;">0 đ</p>
+                                    </div>
+                                    <div class="input-a">
+                                        <div class="select">
+                                            <p>Select Wallet</p>
+                                        </div>
+                                        <br>
+                                        <div class="allet-l-box">
+                                            <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
+                                        </div>
+                                        <div class="allet-r-box">
+                                            <div class="allet-top">  
+                                                    <span class="aa">aa</span>
+                                                    <div class="allet-icon">
+                                                        <i class="fa-solid fa-caret-down"></i>
+                                                    </div>
+                                            </div>
+                                            <div class="allet-bt">
+                                                <p style="font-weight: 700;font-size: 18px;margin-left: 7%;">0 đ</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="aaa">
+                                            <div class="allet-l-box">
+                                                <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
+                                            </div>
+                                            <div class="allet-r-box">
+                                                <div class="allet-top">  
+                                                        <span class="aa">aa</span>
+                                                        <div class="allet-icon">
+                                                            <i class="fa-solid fa-caret-down"></i>
+                                                        </div>
+                                                </div>
+                                                <div class="allet-bt">
+                                                    <p style="font-weight: 700;font-size: 18px;margin-left: 7%;">0 đ</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="search">
+                        <form class="search-report">
+                            <label for="inputSearchReport" style="font-size: 15px; color: gray;">Search report: </label>
+                            <div class="div_input">
+                                <input type="text" name="searchMonth" id="inputSearchMonth" placeholder="Month">
+                                <input type="text" name="searchYear" id="inputSearchYear" placeholder="Year">
+                                <input type="submit" id="btn-submit-search">
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>    
+            </div>
+        </head>
+        
+        <!-- Main-content -->
+        <div class="Container-main">
+            <div class="content2">
+                <div class="chartAllowYear">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+                <div class="chartAllowMonth">
+                    <canvas id="myChart2"></canvas>
+                </div>
+                
+                <div class="chartCategory">
+                    <div class="chartCategoryIncome">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+                    <div class="chartCategoryExpense">
+                        <canvas id="myChart4"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wallet -->
+    <div id="my-wallets" class="hide">
+        <!-- Header-wallets -->
+        <div class="header">
+            <div class="content-head container">
+                <div class="icon-comeback">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <p class="name-header">My Wallets</p>
+            </div>
+        </div>
+
+        <div class="ct-wallets container">
+            <div class="wallets-out">
+                <!-- My-Cash -->
+                <div class="it cash">
+                    <div class="it-out cash-out">
+                        <p class="name-wallet">Cash</p>
+                        <div class="ct-main">
+                            <div class="icon-wallet">
+                                <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
+                            </div>
+                            <p id="money-cash">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My-Card -->
+                <div class="it card">
+                    <div class="it-out card-out">
+                        <p class="name-wallet">Card</p>
+                        <div class="ct-main">
+                            <div class="icon-wallet">
+                                <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
+                            </div>
+                            <p id="money-card">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My-wallet-detail -->
+            <div class="detail-wallet in-ct hide">
+                <div class="head-detail">
+                    <div class="icon-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <p class="name-wallet-detail">Cash</p>
+                </div>
+                
+                <div class="ct-detail">
+                    <div class="it-detail">
+                        <p class="name-it-detail">Currency</p>
+                        <div class="ct-it-detail currency">
+                            <div class="icon-VN">
+                                <img src="https://static.moneylover.me/img/flag/ic_currency_vnd.png" alt="">
+                            </div>
+                            <p>Viet Nam Đồng (VND)</p>
+                        </div>
+                    </div>
+
+                    <div class="it-detail initial">
+                        <p class="name-it-detail">Initial Balance</p>
+                        <div class="ct-it-detail">
+                            <input id="inputMoney" type="text" placeholder="0">
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <input class="btn btn-cancel" type="button" value="CANCEL">
+                        <input class="btn btn-saveMoney " type="submit" value="SAVE">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS report -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="./Report.js"></script>
+</body>
+</html>
