@@ -182,7 +182,7 @@ var myChart4 = document.getElementById("myChart4").getContext('2d');
 var dataCategoryExpense  = [];
 var dataCategoryIncome = [];
 
-//chuẩn bị dữ liệu
+//Prep data
 //bảng màu
 var colors = ["red", "yellow", "green", "blue", "orange", "#ccc", "pink", "#AE5CAD", "#34ADB5", "#FE5A5E", "#6FA917", "#CF8500", "#027B83", "#FF965F"];
 
@@ -220,12 +220,12 @@ async function fetchDataCategory(){
     }
     
     //Prep labels
-    let labelCategoryExpenses = idDiffExpenses.map((item) => categoryNameOrigin[item]);
-    let labelCategoryIncomes = idDiffIncomes.map((item) => categoryNameOrigin[item]);
-    
+    let labelCategoryExpenses = idDiffExpenses.map((item) => categoryNameOrigin[item-1]);
+    let labelCategoryIncomes = idDiffIncomes.map((item) => categoryNameOrigin[item-1]);
+
     //Prep Background color
-    let bgcExpenses = idDiffExpenses.map((item) => colors[item]);
-    let bgcIncomes = idDiffIncomes.map((item) => colors[item]);
+    let bgcExpenses = idDiffExpenses.map((item) => colors[item-1]);
+    let bgcIncomes = idDiffIncomes.map((item) => colors[item-1]);
 
     //Prep data money
     for(let i = 0; i < idDiffExpenses.length; i++){
@@ -248,7 +248,7 @@ async function fetchDataCategory(){
         dataCategoryIncome.push(amountIncome);
     }
 
-    //render report allow category expense
+    // render report allow category expense
     var data1 = {
         labels: labelCategoryExpenses,
         datasets: [
@@ -260,18 +260,39 @@ async function fetchDataCategory(){
         ]
     };
 
+    // var data1 = [{
+    //     data: dataCategoryExpense,
+    //     // labels: labelCategoryExpenses,
+    //     backgroundColor: bgcExpenses,
+    //     borderColor: "#fff",
+    //     // datasets: [
+    //     //     {
+    //     //         label: "Expenses",
+    //     //         backgroundColor: bgcExpenses,
+    //     //         data: dataCategoryExpense,
+    //     //     },
+    //     // ]
+    // }];
+
+    // var options1= {
+    //     tooltip: {
+    //         enabled: true
+    //     },
+
+    //     plugins: {
+    //         datalabels: {
+    //             formatter: (value, myChart3) => {
+    //                 let sum = myChart3.datasets._meta[0].total;
+    //                 let percentage
+    //             }
+    //         }
+    //     }
+    // }
+
     var myPieChar1 = new Chart(myChart3, {
         type: 'pie',
         data: data1,
         options: {
-            barValueSpacing: 20,
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        min: 0,
-                    }
-                }]
-            },
             plugins: {
                 title: {
                     display: true,
@@ -280,6 +301,9 @@ async function fetchDataCategory(){
                         size: 20
                     }
                 },
+                // labels:{
+                //     render: 'percentage'
+                // }
             },
         }
     });
@@ -296,18 +320,41 @@ async function fetchDataCategory(){
         ]
     };
 
+  // Cấu hình biểu đồ
+// var options2 = {
+//     plugins:{
+//         tooltip: {
+//             enabled: false
+//         },
+
+//         datalabels: {
+//             formatter: (value, myChart4) => {
+//                 let sum = 0;
+//                 const datapoints = myChart4.Chart.data.datasets[0].data;
+//                 datapoints.map(data => {
+//                     sum += data;
+//                 });
+//                 const percentageValue = (value*100 / sum).toFixed(2) + "%";
+//                 return percentageValue;
+//             },
+//             color: "#fff",
+//         }
+//     },
+//     plugins: {
+//         title: {
+//             display: true,
+//             text: 'Report allow category income',
+//             font: {
+//                 size: 20
+//             }
+//         },
+//     }  
+// };
+
     var myPieChart2 = new Chart(myChart4, {
         type: 'pie',
         data: data3,
         options: {
-            barValueSpacing: 20,
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        min: 0,
-                    }
-                }]
-            },
             plugins: {
                 title: {
                     display: true,
@@ -318,6 +365,7 @@ async function fetchDataCategory(){
                 },
             },
         }
+        // options: options2
     });
 }
 
@@ -422,5 +470,201 @@ btnSave.addEventListener('click', () => {
         cash_out.classList.remove('hide');
     }
 })
+
+  //MY-CATEGORIES
+
+  var container_listCategory = document.querySelector('.list-category');
+  var list_category = document.querySelectorAll('.it-category');
+  var categoryDetail = document.querySelector(".category-detail");
+  var icon_closeCategoryDetail = document.querySelector('.category-detail .icon-close');
+  
+  list_category.forEach((it) => {
+      it.addEventListener('click', () => {
+          // container_listCategory.style.marginLeft = '-100px';
+          categoryDetail.classList.remove('hide');
+          // categoryDetail.style.left = '100%';
+          categoryDetail.querySelector('.img-categoryDetail img').src = it.querySelector('.img img').src;
+          categoryDetail.querySelector('.name-categoryDetail').innerHTML = it.querySelector('.name-itCategory').innerHTML;
+          categoryDetail.querySelector(".name-inout").innerHTML = it.parentElement.querySelector('.name-listCategory').innerHTML;
+      })
+  })
+  
+  icon_closeCategoryDetail.addEventListener('click', () => {
+      categoryDetail.classList.add('hide');
+  })
+  
+  document.querySelector("#my-categories .icon-comeback").addEventListener('click', () => {
+      document.getElementById('my-categories').classList.add('hide');
+      contentMain.classList.remove('hide');
+      account.classList.add('hide');
+      if(!categoryDetail.classList.contains('hide')) categoryDetail.classList.add('hide');
+  })
+  
+      //button My-category in icon menu
+  var My_categories = document.getElementById('my-categories');
+  var btn_MyCategories = document.querySelector('.account .categories');
+  btn_MyCategories.addEventListener('click', () => {
+      contentMain.classList.add('hide');
+      My_categories.classList.remove('hide');
+  })
+  
+      //MY-ACCOUNT
+  var myAccount = document.getElementById('my-account');
+  var btn_closeAccount = document.querySelector('.icon-closeAccount');
+  var btn_MyAccount = document.querySelector('.account .my-account');
+  
+  btn_closeAccount.addEventListener('click', () => {
+      myAccount.classList.add('hide');
+      contentMain.classList.remove('hide');
+      account.classList.add('hide');
+  })
+      
+  //button my-account in icon menu
+  btn_MyAccount.addEventListener('click', () => {
+      myAccount.classList.remove('hide');
+      account.classList.add('hide');
+  })
+  
+      //MAIN CONTENT TRANSACTION
+  //xu ly khi chua co giao dich nao
+  
+  //xu ly khi da co giao dich
+  //prep data
+  let imageCategories = [
+      'https://static.moneylover.me/img/icon/ic_category_foodndrink.png',
+      'https://static.moneylover.me/img/icon/ic_category_transport.png',
+      'https://static.moneylover.me/img/icon/icon_136.png',
+      'https://static.moneylover.me/img/icon/icon_124.png',
+      'https://static.moneylover.me/img/icon/icon_125.png',
+      'https://static.moneylover.me/img/icon/icon_139.png',
+      'https://static.moneylover.me/img/icon/icon_126.png',
+      'https://static.moneylover.me/img/icon/ic_category_doctor.png',
+      'https://static.moneylover.me/img/icon/icon_53.png',
+      'https://static.moneylover.me/img/icon/icon_142.png',
+      'https://static.moneylover.me/img/icon/icon_49.png',
+      'https://static.moneylover.me/img/icon/icon_138.png',
+      'https://static.moneylover.me/img/icon/ic_category_salary.png',
+      'https://static.moneylover.me/img/icon/ic_category_other_income.png'
+  ];
+  
+  async function fetchDataCategoryT3(){
+      //prep data from file category json
+      const response = await fetch('../JsonFile/Category.json');
+      const data = await response.json();
+  
+      let categoryIDOrigin = data.map((item) => item.categoryID);
+      let categoryNameOrigin = data.map((item) => item.categoryName);
+  
+      //prep data from file trans json
+      let days =  [];
+      let categoryIDTrans = [];
+      let amounts = [];
+  
+      const response2 = await fetch('../JsonFile/TransactionT3.json');
+      const data2 = await response2.json();
+  
+      for(let i = 0; i < data2.length; i++){
+          days.push(data2[i].date.slice(0,2));
+          categoryIDTrans.push(data2[i].categoryID);
+          amounts.push(Number(data2[i].amount));
+      }
+  
+      let monthAndYear_ = data2[0].date.slice(3, 10);
+  
+      //Tao mang Id có các phần tử khác nhau
+      let categoryIDDiffs = []
+      for(let i = 0; i < categoryIDTrans.length; i++){
+          if(!categoryIDDiffs.includes(categoryIDTrans[i])){
+              categoryIDDiffs.push(categoryIDTrans[i]);
+          }
+      }
+  
+      let have_content = document.querySelector('.have-content');
+      // Duyệt từng giao dịch
+      for(let i = 0; i < categoryIDDiffs.length; i++){
+          let transAllowCategory = document.createElement('div');
+          transAllowCategory.classList.add('transAllowCategory');
+  
+          if(categoryIDDiffs[i] !== categoryIDDiffs[0]){
+              let Empty = document.createElement('div');
+              Empty.classList.add('Empty');
+              transAllowCategory.appendChild(Empty);
+          }
+          
+  
+          let overviewTrans = document.createElement('div');
+          overviewTrans.classList.add('overviewTrans');
+          transAllowCategory.appendChild(overviewTrans);
+  
+          let left1 = document.createElement('div');
+          left1.classList.add('left');
+          overviewTrans.appendChild(left1)
+          
+          let img_Category = document.createElement('div');
+          img_Category.classList.add('img-Category');
+          left1.appendChild(img_Category);
+  
+          let img = document.createElement('img');
+          img.src = imageCategories[categoryIDDiffs[i]-1]
+          img_Category.appendChild(img);
+  
+          let detail = document.createElement('div');
+          detail.classList.add('detail');
+          left1.appendChild(detail);
+  
+          let name_category = document.createElement('div');
+          name_category.classList.add('name-category');
+          name_category.innerHTML = categoryNameOrigin[categoryIDDiffs[i]-1];
+          detail.appendChild(name_category);
+  
+          let quantity = document.createElement('div');
+          quantity.classList.add('quantity');
+          detail.appendChild(quantity);
+  
+          let totalInOverView = document.createElement('p');
+          totalInOverView.classList.add('total');
+          overviewTrans.appendChild(totalInOverView);
+  
+          let dem = 0;
+          let total = 0;
+          for(let j = 0; j < categoryIDTrans.length; j++){
+              if(categoryIDTrans[j] == categoryIDDiffs[i]){
+                  dem = dem + 1;
+                  total = total + amounts[j];
+  
+                  let itTrans = document.createElement('div');
+                  itTrans.classList.add('it-Trans');
+                  transAllowCategory.appendChild(itTrans);
+  
+                  let left2 = document.createElement('div');
+                  left2.classList.add('left');
+                  itTrans.appendChild(left2);
+  
+                  let day = document.createElement('p');
+                  day.classList.add('day');
+                  day.innerHTML = days[j];
+                  left2.appendChild(day);
+  
+                  let monthAndYear = document.createElement('p');
+                  monthAndYear.classList.add('monthAndYear');
+                  monthAndYear.innerHTML = "T" + monthAndYear_;
+                  left2.appendChild(monthAndYear);
+  
+                  let amountInTrans = document.createElement('p');
+                  amountInTrans.classList.add('amount');
+                  amountInTrans.innerHTML = amounts[j] + " đ";
+                  itTrans.appendChild(amountInTrans);
+              }
+          }
+  
+          quantity.innerHTML = dem + " Transactions";
+          totalInOverView.innerHTML = total + " đ";
+          have_content.appendChild(transAllowCategory)
+          // console.log(transAllowCategory);
+      }
+      console.log(have_content);
+  }
+  
+  fetchDataCategoryT3();
 
 

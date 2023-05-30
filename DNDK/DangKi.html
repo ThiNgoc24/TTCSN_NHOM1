@@ -10,44 +10,57 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="container">
-        <div class="bg-blue"></div>
+        <div class="bg-blue"> </div>
 
         <div class="bg-xam"></div>
 
-        <div class="logo-money">
-            <img src="../asset/logo_MoneySmart.jpg" alt="">
-            <div class="namew">Money Smart</div>
-        </div>
-
-        <div class="content">
-            <h1 class="log-in">Register</h1>
-            <p class="desc">Using Money Smart account</p>
-            <form class="main-ct">
-                <div class="username">
-                    <input id="inputUsername" type="text" placeholder="Username" required>
-                    <p class="alert"></p>
-                </div>
-                
-               <div class="pw">
-                    <input id="inputPW" type="password" placeholder="Password" required>
-                    <p class="alert"></p>
-                    <div id="divlock" onclick="myFunction1()">
-                        <i id="lock" class="fa-solid fa-lock"></i>
-                        <i id="unlock" class="fa-solid fa-unlock"></i>
+        <div class="content-contain">
+            <div class="logo-money">
+                <img src="logo_MoneySmart.jpg" alt="">
+                <div class="namew">Money Smart</div>
+            </div>
+            <div class="content">
+                <h1 class="log-in">Register</h1>
+                <p class="desc">Using Money Smart account</p>
+                <form class="main-ct" action="register" method="post">
+                    <div class="username">
+                         <input id="inputUsername" type="text" placeholder="Username" name = "userIn" required>
+                         <p class="alert"></p>
                     </div>
-               </div>
-               <div class="acp-pw">
-                    <input id="input-acpPW" type="password" placeholder="Confirm Password" required>
-                    <p class="alert"></p>
-               </div>
-                <input style="margin-top: 30px;" class="btn-login" type="submit" value="REGISTER"></input>
-                <div class="noaccount">Have you an account? <a class="register" href="./DangNhap.html">Sign In</a></div>
-            </form>
+                   <div class="pw">
+                        <input type="password" placeholder="Password" name = "passIn" required id = "inputPW">
+                        <p class="alert"></p>
+                        <div id="divlock" onclick="myFunction1()">
+                            <i id="lock" class="fa-solid fa-lock"></i>
+                            <i id="unlock" class="fa-solid fa-unlock"></i>
+                        </div>
+                   </div>
+                    <div class="username">
+                         <input id="inputEmail" type="text" placeholder="Email" name = "emailIn" required>
+                         <p class="alert"></p>
+                    </div>
+                    <div class="username">
+                         <input id="inputHovaten" type="text" placeholder="Họ và tên" name = "hovatenIn" required>
+                         <p class="alert"></p>
+                    </div>
+                    <div class="username">
+                         <input id="inputSodt" type="text" placeholder="Số điện thoại" name = "sdtIn" required>
+                         <p class="alert"></p>
+                    </div>
+                    <!--
+                    <div class="forgot">Forgot Password</div>
+                    -->
+                    <input class="btn-login" type="submit" value="REGISTER"></input>
+                    <div class="noaccount">Don't have an account? <a class="register" href="./DangNhap.html">Sign In</a></div>
+                </form>
+            </div>
         </div>
     </div>
-    <script src="./DK.js"></script>
+
+    <script src="DN.js"></script>
 </body>
 </html>

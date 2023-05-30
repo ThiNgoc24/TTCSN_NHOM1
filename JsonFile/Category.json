@@ -46,5 +46,13 @@
   {
     "categoryID": 12,
     "categoryName": "Other"
+  },
+  {
+    "categoryID": 13,
+    "categoryName": "Salary"
+  },
+  {
+    "categoryID": 14,
+    "categoryName": "Other Income"
   }
 ]
