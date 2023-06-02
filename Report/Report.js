@@ -486,6 +486,11 @@ btnSave.addEventListener('click', () => {
           categoryDetail.querySelector('.img-categoryDetail img').src = it.querySelector('.img img').src;
           categoryDetail.querySelector('.name-categoryDetail').innerHTML = it.querySelector('.name-itCategory').innerHTML;
           categoryDetail.querySelector(".name-inout").innerHTML = it.parentElement.querySelector('.name-listCategory').innerHTML;
+          if(categoryDetail.querySelector(".name-inout").innerHTML == 'Incomes'){
+            categoryDetail.querySelector(".name-inout").style.backgroundColor = 'blue';
+        }else{
+            categoryDetail.querySelector(".name-inout").style.backgroundColor = 'red';
+        }
       })
   })
   

@@ -293,6 +293,10 @@ body{
     transform: translate(-50%, -50%);
 }
 
+.chartCategory{
+    padding-bottom: 50px;
+}
+
 .flat-box{
     position: absolute;
     /* top: 100px; */
@@ -425,18 +429,20 @@ body{
 
     /* ADD-TRANSACTION */
 .add-trans{
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: fixed;
+    /* top: 0;
     left: 0;
-    bottom: 0;
+    bottom: 0; */
     background-color:#03030361;
     z-index: 99;
-    display: flex;
-    justify-content: center;
+    height: 100vh;
+    width: 100%;
 }
 
 .add-trans .box-trans{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #fff;
     height:max-content;
     margin-top: 10px;
@@ -445,21 +451,21 @@ body{
     border-radius: 10px;
 }
 
-.box-trans .name-input{
+/* .box-trans .name-input{
     color: rgba(0,0,0,.54);
     font-size: 12px;
     margin-bottom: 8px;
-}
+} */
 
-.box-trans .it{
+/* .box-trans .it{
     border: 1px solid #ccc;
     margin-top: 20px;
     padding: 10px 5px;
     border-radius: 8px;
     position: relative;
-}
+} */
 
-.box-trans .it:hover{
+/* .box-trans .it:hover{
     border: 1px solid #000;
 }
 
@@ -491,37 +497,81 @@ body{
 .main-group .selected{
     color: #000 !important;
     font-size: 18px;
+} */
+
+.select-item {
+    border: 1px solid#ccc;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.select-item input{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.select-item .name-item {
+    font-size: 12px;
+    color: gray;
+    padding-bottom: 10px;
+}
+
+.select-item select {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.select-item option {
+    padding: 20px;
+}
+
+.add-trans .btnForm {
+    background-color: #3D70FF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.add-trans .btnForm:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 /* Tạo danh sách lựa chọn cho loại dịch vụ */
-.add-trans .select-box{
+/* .add-trans .select-box{
     width: 350px;
     background-color: #fff;
     height: max-content;
     padding:15px;
-    /* padding-top: 15px; */
     margin-left: 1px;
     font-size: 18px;
     animation: appearenceSelectBox 0.3s linear;
     position: absolute;
-}
+} */
 
-.add-trans .select-inout,
+/* .add-trans .select-inout,
 .add-trans .select-wallet,
 .add-trans .select-category{
     left: 108%;
     top: 0;
     border-radius: 10px;
-}
+} */
 
-.select-category .options-container{
+/* .select-category .options-container{
     max-height: 350px;
     opacity: 1;
     overflow-y: scroll;
-}
+} */
 
     /* Tạo hiệu ứng cho thanh cuốn */
-.select-category .options-container::-webkit-scrollbar{
+/* .select-category .options-container::-webkit-scrollbar{
     width: 8px;
 }
 
@@ -538,9 +588,9 @@ body{
 .select-box .head-selectBox{
     display: flex;
     font-size: 15px;
-    color: grey;
+    color: grey; */
     /* border-bottom: 1px solid #ccc */
-}
+/* }
 
 .head-selectBox .icon-close-selectBox{
     margin-right: 20px;
@@ -600,7 +650,7 @@ body{
 
 .FoodAndBeverage{
     display: flex;
-}
+} */
 
 .container{
     width: 80%;
@@ -610,12 +660,10 @@ body{
     /* My-wallets */
 #my-wallets, #my-categories{
     position: absolute;
-    background-color: #E4E4E4;
-    top: 0;
-    /* bottom: 0; */
     left: 0;
     right: 0;
     z-index: 99;
+    height: 100vh;
 }
 
 #my-wallets .header,
@@ -768,6 +816,20 @@ body{
     margin-right: 20px;
 }
 
+.btns .btn{
+    background-color: #3D70FF;
+    color: #fff;
+    border: none;
+    padding: 10px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btns .btn:hover{
+    opacity: 0.9;
+}
+
 /* My-categories */
 #my-categories .list-category{
     width: 50%;
@@ -863,7 +925,7 @@ body{
 
     /* MY-ACCOUNT */
 #my-account{
-    position: absolute;
+    position: fixed;
     background-color: #00000052;
     top: 0;
     bottom: 0;

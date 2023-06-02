@@ -29,7 +29,7 @@
             </a>
             <a href="../About/About.html" class="icon icon-report">
                 <i class="fa-solid fa-address-card"></i>
-                <p class="name-icon">About Us</p>
+                <p class="name-icon">About</p>
             </a>
             <div class="mobile">
                 <div class="icon android">
@@ -232,7 +232,7 @@
         <!-- Add-transaction -->
         <div class="add-trans hide">
             <form class="box-trans">
-                <div class="it group group0">
+                <!-- <div class="it group group0">
                     <p class="name-input">Expense/Income</p>
                     <div class="main-group">
                         <div class="icon-question">
@@ -246,10 +246,10 @@
                         <div class="icon-rowRight">
                             <i class="fa-solid fa-chevron-right"></i>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Select in/come -->
-                    <div class="select-box select-inout hide">
+                    <!-- <div class="select-box select-inout hide">
                         <div class="head-selectBox">
                             <div class="icon-close-selectBox">
                                 <i class="fa-solid fa-xmark"></i>
@@ -275,9 +275,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="it group group1">
+                <!-- <div class="it group group1">
                     <p class="name-input">Wallet</p>
                     <div class="main-group">
                         <div class="icon-question">
@@ -291,10 +291,10 @@
                         <div class="icon-rowRight">
                             <i class="fa-solid fa-chevron-right"></i>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- select-wallet -->
-                    <div class="select-box select-wallet hide">
+                    <!-- <div class="select-box select-wallet hide">
                         <div class="head-selectBox">
                             <div class="icon-close-selectBox">
                                 <i class="fa-solid fa-xmark"></i>
@@ -320,9 +320,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="it group group2">
+                <!-- <div class="it group group2">
                     <p class="name-input">Category</p>
                     <div class="main-group">
                         <div class="icon-question">
@@ -331,16 +331,15 @@
                         <div id="options"> 
                             <div class="selected selected2">
                                 <p style="color: grey; font-size: 16px">Select Category</p>
-                                <!-- <input id="input1" style="color: grey; font-size: 16px">Select Category...</input> -->
                             </div>
                         </div>
                         <div class="icon-rowRight">
                             <i class="fa-solid fa-chevron-right"></i>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Categories of expense -->
-                    <div class="select-box select-category categoriesExpense hide">
+                    <!-- <div class="select-box select-category categoriesExpense hide">
                         <div class="head-selectBox">
                             <div class="icon-close-selectBox">
                                 <i class="fa-solid fa-xmark"></i>
@@ -438,10 +437,10 @@
                                 <label for="Other">Other Expense <span style="color: grey; font-size: 15px">(write the "Note")</span></label>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Categories of Income-->
-                    <div class="select-box select-category categoriesIncome hide">
+                    <!-- <div class="select-box select-category categoriesIncome hide">
                         <div class="head-selectBox">
                             <div class="icon-close-selectBox">
                                 <i class="fa-solid fa-xmark"></i>
@@ -483,7 +482,68 @@
                 <div class="btn-submit">
                     <input class="btn btn-cancel" type="button" value="CANCEL" id="submit1" onclick="showInfo()">
                     <input class="btn btn-save" type="submit" value="SAVE" id="submit">
+                </div> -->
+
+                <div class="select-item">
+                    <div class="name-item">Select InOut</div>
+                    <select name="" id="selectInOut" required>
+                        <option value="" disabled selected style="font-size: 12px">Select In/Out</option>
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
+                    </select>
                 </div>
+
+                <div class="select-item selectCategoryIncome">
+                    <div class="name-item">Select wallet</div>
+                    <select name="" id="" required>
+                        <option value="" disabled selected style="font-size: 12px">Select Wallet</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Card">Card</option>
+                    </select>
+                </div>
+
+                <div class="select-item">
+                    <div class="name-item">Select InOut</div>
+                    <select name="" id="CategoriesExpenses" class="hide" required>
+                        <option value="" disabled selected style="font-size: 12px">Select Category</option>
+                        <option value="Food & Beverage">Food & Beverage</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Rentals">Rentals</option>
+                        <option value="Water-Bill">Water-Bill</option>
+                        <option value="Electricity-Bill">Electricity-Bill</option>
+                        <option value="Gas-Bill">Gas-Bill</option>
+                        <option value="Internet-Bill">Internet-Bill</option>
+                        <option value="Medical Check-up">Medical Check-up</option>
+                        <option value="Pets">Pets</option>
+                        <option value="Out going">Out going</option>
+                        <option value="Fun money">Fun money</option>
+                        <option value="Other expense">Other expense</option>
+                    </select>
+
+                    <select name="" id="CategoriesIncomes" required>
+                        <option value="" disabled selected style="font-size: 12px">Select category</option>
+                        <option value="Salary">Salary</option>
+                        <option value="Other income">Other income</option>
+                    </select>
+                </div>
+
+                <div class="select-item">
+                    <div class="name-item">Amount</div>
+                    <input type="text" placeholder="0" required>
+                </div>
+
+                <div class="select-item">
+                    <div class="name-item">Date</div>
+                    <input type="date" required>
+                </div>
+
+                <div class="select-item">
+                    <div class="name-item">Note</div>
+                    <input type="text" placeholder="Note">
+                </div>
+
+                <input type="button" value="Cancel" class="btnForm" id="btnCancel">
+                <input type="submit" value="Submit" class="btnForm" id="btnSubmit">
             </form>
         </div>
     </div>
@@ -580,7 +640,7 @@
         <div class="ct-categories container">
             <div class="list-category">
                 <ul class="header-list list-expenses">
-                    <p class="name-listCategory">Expense</p> 
+                    <p class="name-listCategory">Expenses</p> 
                     <li class="it-category">
                         <div class="img">
                             <img src="https://static.moneylover.me/img/icon/ic_category_foodndrink.png" alt="">

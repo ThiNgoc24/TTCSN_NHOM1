@@ -30,153 +30,187 @@ account.addEventListener('click', (e) => {
 });
 
 //add-trans
+// var addTrans = document.querySelector('.add-trans');
+// var btnAdd = document.querySelector('.btn-theme');
+// var btnCancel = document.querySelector('.btn-cancel');
+// function toggleAddTrans(){
+//     addTrans.classList.toggle('hide');
+// }
+
+// function noneSelectCategory(){
+//     if(!categoriesExpense.classList.contains('hide'))
+//         categoriesExpense.classList.add('hide');
+//     if(!categoriesIncome.classList.contains('hide'))
+//         categoriesIncome.classList.add('hide');
+// }
+
+// function noneSelectWallet(){
+//     if(!selectWallet.classList.contains('hide'))
+//         selectWallet.classList.add('hide');
+// }
+
+// function noneSelectInOut(){
+//     if(!selectInOut.classList.contains('hide'))
+//         selectInOut.classList.add('hide');
+// }
+
+// btnAdd.addEventListener("click",toggleAddTrans);
+// btnCancel.addEventListener('click', toggleAddTrans);
+// addTrans.addEventListener('click', (e) => {
+//     if(e.target == e.currentTarget) {
+//         toggleAddTrans();
+//         noneSelectCategory();
+//         noneSelectWallet();
+//         noneSelectInOut();
+//     }
+// })
+
 var addTrans = document.querySelector('.add-trans');
 var btnAdd = document.querySelector('.btn-theme');
-var btnCancel = document.querySelector('.btn-cancel');
-function toggleAddTrans(){
-    addTrans.classList.toggle('hide');
-}
+var btnCancel = document.getElementById('btnCancel');
 
-function noneSelectCategory(){
-    if(!categoriesExpense.classList.contains('hide'))
-        categoriesExpense.classList.add('hide');
-    if(!categoriesIncome.classList.contains('hide'))
-        categoriesIncome.classList.add('hide');
-}
-
-function noneSelectWallet(){
-    if(!selectWallet.classList.contains('hide'))
-        selectWallet.classList.add('hide');
-}
-
-function noneSelectInOut(){
-    if(!selectInOut.classList.contains('hide'))
-        selectInOut.classList.add('hide');
-}
-
-btnAdd.addEventListener("click",toggleAddTrans);
-btnCancel.addEventListener('click', toggleAddTrans);
 addTrans.addEventListener('click', (e) => {
-    if(e.target == e.currentTarget) {
-        toggleAddTrans();
-        noneSelectCategory();
-        noneSelectWallet();
-        noneSelectInOut();
+        if(e.target == e.currentTarget) {
+            addTrans.classList.add('hide');
+        }
+})
+
+btnAdd.addEventListener('click', () => {
+    addTrans.classList.remove('hide');
+})
+
+btnCancel.addEventListener('click', () => {
+    addTrans.classList.add('hide');
+})
+
+var CategoriesExpenses = document.getElementById('CategoriesExpenses');
+var CategoriesIncomes = document.getElementById('CategoriesIncomes');
+var selectInOut = document.getElementById('selectInOut');
+
+selectInOut.addEventListener('change', () => {
+    var selectedValue = selectInOut.value;
+    if(selectedValue == 'Income'){
+        CategoriesExpenses.classList.add('hide');
+        CategoriesIncomes.classList.remove('hide');
+    }else if(selectedValue == 'Expense') {
+        CategoriesExpenses.classList.remove('hide');
+        CategoriesIncomes.classList.add('hide');
     }
 })
 
-//Select-Wallet
-var group1 = document.querySelector('.box-trans .group1');
-var selected1 = document.querySelector('.selected1');
-var selectWallet= document.querySelector('.select-wallet');
-var options1 = document.querySelectorAll('.select-wallet .option input');
 
-function toggleSelectWallet(){
-    selectWallet.classList.toggle('hide');
-}
+// //Select-Wallet
+// var group1 = document.querySelector('.box-trans .group1');
+// var selected1 = document.querySelector('.selected1');
+// var selectWallet= document.querySelector('.select-wallet');
+// var options1 = document.querySelectorAll('.select-wallet .option input');
 
-group1.addEventListener('click', () => {
-    toggleSelectWallet();
-    noneSelectCategory();
-    noneSelectInOut();
-});
+// function toggleSelectWallet(){
+//     selectWallet.classList.toggle('hide');
+// }
 
-options1.forEach((option) => {
-    option.addEventListener('change', () => {
-        if(option.checked) {
-            const labelWallet = document.querySelector(`label[for=${option.id}]`);
-            if(labelWallet){
-                const labelTextWallet = labelWallet.innerHTML;
-                selected1.innerHTML = labelTextWallet;
-            }
-        }
-        // selected1.innerHTML = option.querySelector("label").innerHTML;
-        // console.log(option.querySelector('input').value)
-        // if (e.target === e.currentTarget){
-        //     selected1.innerHTML = option.querySelector("label").innerHTML;
-        //     // selectWallet.classList.add('hide');
-        // }
-    })
-})
+// group1.addEventListener('click', () => {
+//     toggleSelectWallet();
+//     noneSelectCategory();
+//     noneSelectInOut();
+// });
 
-const formData = new FormData();
-formData.append("divContent", selected1.innerHTML);
+// options1.forEach((option) => {
+//     option.addEventListener('change', () => {
+//         if(option.checked) {
+//             const labelWallet = document.querySelector(`label[for=${option.id}]`);
+//             if(labelWallet){
+//                 const labelTextWallet = labelWallet.innerHTML;
+//                 selected1.innerHTML = labelTextWallet;
+//             }
+//         }
+//         // selected1.innerHTML = option.querySelector("label").innerHTML;
+//         // console.log(option.querySelector('input').value)
+//         // if (e.target === e.currentTarget){
+//         //     selected1.innerHTML = option.querySelector("label").innerHTML;
+//         //     // selectWallet.classList.add('hide');
+//         // }
+//     })
+// })
 
-//Select Category
-var group2 = document.querySelector('.box-trans .group2');
-var selected2 = document.querySelector('.selected2');
-var options2 = document.querySelectorAll('.categoriesExpense .option'); //Mảng chứa tất cả các option của Expense
-var options2_2 = document.querySelectorAll('.categoriesIncome .option'); //Mảng chứa tất cả các option của Income
-var categoriesExpense = document.querySelector('.categoriesExpense');
-var categoriesIncome = document.querySelector('.categoriesIncome');
+// const formData = new FormData();
+// formData.append("divContent", selected1.innerHTML);
 
-        //Select Expense/Income
-        var group0 = document.querySelector('.box-trans .group0');
-        var selectInOut = document.querySelector('.select-inout');
-        var selected0 = document.querySelector('.selected0');
-        var options0 = document.querySelectorAll('.select-inout .option');
+// //Select Category
+// var group2 = document.querySelector('.box-trans .group2');
+// var selected2 = document.querySelector('.selected2');
+// var options2 = document.querySelectorAll('.categoriesExpense .option'); //Mảng chứa tất cả các option của Expense
+// var options2_2 = document.querySelectorAll('.categoriesIncome .option'); //Mảng chứa tất cả các option của Income
+// var categoriesExpense = document.querySelector('.categoriesExpense');
+// var categoriesIncome = document.querySelector('.categoriesIncome');
 
-        function toggleSelectInOut(){
-            selectInOut.classList.toggle('hide');
-        }
+//         //Select Expense/Income
+//         var group0 = document.querySelector('.box-trans .group0');
+//         var selectInOut = document.querySelector('.select-inout');
+//         var selected0 = document.querySelector('.selected0');
+//         var options0 = document.querySelectorAll('.select-inout .option');
 
-        group0.addEventListener('click', () => {
-            toggleSelectInOut();
-            noneSelectCategory();
-            noneSelectWallet();
-        });
+//         function toggleSelectInOut(){
+//             selectInOut.classList.toggle('hide');
+//         }
+
+//         group0.addEventListener('click', () => {
+//             toggleSelectInOut();
+//             noneSelectCategory();
+//             noneSelectWallet();
+//         });
         
-        options0.forEach((option) => {
-            option.addEventListener('click', () => {
-                selected0.innerHTML = option.querySelector("label").innerHTML;
-                selectInOut.classList.add('hide');
-                if(selected0.innerHTML === "Income"){
-                    group2.addEventListener('click', ()=> {
-                        if(!categoriesExpense.classList.contains("hide")){
-                            categoriesExpense.classList.add('hide');
-                        }
-                        categoriesIncome.classList.remove('hide');
-                        noneSelectWallet();
-                        noneSelectInOut();
-                    });
-                } else if(selected0.innerHTML === "Expense"){
-                    group2.addEventListener('click', ()=> {
-                        if(!categoriesIncome.classList.contains("hide")){
-                            categoriesIncome.classList.add('hide');
-                        }
-                        categoriesExpense.classList.remove('hide');
-                        noneSelectWallet();
-                        noneSelectInOut();
-                    });
-                }
-            })
-        })
+//         options0.forEach((option) => {
+//             option.addEventListener('click', () => {
+//                 selected0.innerHTML = option.querySelector("label").innerHTML;
+//                 selectInOut.classList.add('hide');
+//                 if(selected0.innerHTML === "Income"){
+//                     group2.addEventListener('click', ()=> {
+//                         if(!categoriesExpense.classList.contains("hide")){
+//                             categoriesExpense.classList.add('hide');
+//                         }
+//                         categoriesIncome.classList.remove('hide');
+//                         noneSelectWallet();
+//                         noneSelectInOut();
+//                     });
+//                 } else if(selected0.innerHTML === "Expense"){
+//                     group2.addEventListener('click', ()=> {
+//                         if(!categoriesIncome.classList.contains("hide")){
+//                             categoriesIncome.classList.add('hide');
+//                         }
+//                         categoriesExpense.classList.remove('hide');
+//                         noneSelectWallet();
+//                         noneSelectInOut();
+//                     });
+//                 }
+//             })
+//         })
 
 
-options2.forEach((option) => {
-    option.addEventListener('click', (e) => {
-        selected2.innerHTML = option.querySelector("label").innerHTML;
-        categoriesExpense.classList.add('hide');
-    })
-})
+// options2.forEach((option) => {
+//     option.addEventListener('click', (e) => {
+//         selected2.innerHTML = option.querySelector("label").innerHTML;
+//         categoriesExpense.classList.add('hide');
+//     })
+// })
 
-options2_2.forEach((option) => {
-    option.addEventListener('click', () => {
-        selected2.innerHTML = option.querySelector("label").innerHTML;
-        categoriesIncome.classList.add('hide');
-    })
-})
+// options2_2.forEach((option) => {
+//     option.addEventListener('click', () => {
+//         selected2.innerHTML = option.querySelector("label").innerHTML;
+//         categoriesIncome.classList.add('hide');
+//     })
+// })
 
-//icon-close-selectBox
-var selectBoxs = document.querySelectorAll('.select-box');
-selectBoxs.forEach((selectBox) => {
-    selectBox.querySelector('.icon-close-selectBox').addEventListener('click', (e) => {
-        if(e.target == e.currentTarget)
-            selectBox.classList.add('hide');
-    })
-})
+// //icon-close-selectBox
+// var selectBoxs = document.querySelectorAll('.select-box');
+// selectBoxs.forEach((selectBox) => {
+//     selectBox.querySelector('.icon-close-selectBox').addEventListener('click', (e) => {
+//         if(e.target == e.currentTarget)
+//             selectBox.classList.add('hide');
+//     })
+// })
 
-//My-wallets
+    //MY-WALLET
 var contentMain = document.querySelector('.content');
 var My_wallets = document.getElementById('my-wallets');
 var btn_MyWallets = document.querySelector('.account .my-wallets');
@@ -270,7 +304,7 @@ btnSave.addEventListener('click', () => {
     }
 })
 
-//Search date
+//SEARCH DATE
 var search_date = document.querySelector('.search-date');
 var icon_date = document.querySelector('.icon_date .icon');
 
@@ -280,7 +314,6 @@ icon_date.addEventListener('click', () => {
 
 
     //MY-CATEGORIES
-
 var container_listCategory = document.querySelector('.list-category');
 var list_category = document.querySelectorAll('.it-category');
 var categoryDetail = document.querySelector(".category-detail");
@@ -294,6 +327,11 @@ list_category.forEach((it) => {
         categoryDetail.querySelector('.img-categoryDetail img').src = it.querySelector('.img img').src;
         categoryDetail.querySelector('.name-categoryDetail').innerHTML = it.querySelector('.name-itCategory').innerHTML;
         categoryDetail.querySelector(".name-inout").innerHTML = it.parentElement.querySelector('.name-listCategory').innerHTML;
+        if(categoryDetail.querySelector(".name-inout").innerHTML == 'Incomes'){
+            categoryDetail.querySelector(".name-inout").style.backgroundColor = 'blue';
+        }else{
+            categoryDetail.querySelector(".name-inout").style.backgroundColor = 'red';
+        }
     })
 })
 
@@ -468,9 +506,7 @@ async function fetchDataCategoryT3(){
         quantity.innerHTML = dem + " Transactions";
         totalInOverView.innerHTML = total + " đ";
         have_content.appendChild(transAllowCategory)
-        // console.log(transAllowCategory);
     }
-    console.log(have_content);
 }
 
 fetchDataCategoryT3();
