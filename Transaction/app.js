@@ -13,8 +13,8 @@ function toggleIconTrans(){
     icon_smile.classList.toggle('hide');
 }
 
-transaction_contentBox.addEventListener('mouseover', toggleIconTrans);
-transaction_contentBox.addEventListener('mouseout', toggleIconTrans);
+// transaction_contentBox.addEventListener('mouseover', toggleIconTrans);
+// transaction_contentBox.addEventListener('mouseout', toggleIconTrans);
 
 //icon-menu
 var iconMenu = document.querySelector('.icon-menu');
@@ -30,142 +30,187 @@ account.addEventListener('click', (e) => {
 });
 
 //add-trans
+// var addTrans = document.querySelector('.add-trans');
+// var btnAdd = document.querySelector('.btn-theme');
+// var btnCancel = document.querySelector('.btn-cancel');
+// function toggleAddTrans(){
+//     addTrans.classList.toggle('hide');
+// }
+
+// function noneSelectCategory(){
+//     if(!categoriesExpense.classList.contains('hide'))
+//         categoriesExpense.classList.add('hide');
+//     if(!categoriesIncome.classList.contains('hide'))
+//         categoriesIncome.classList.add('hide');
+// }
+
+// function noneSelectWallet(){
+//     if(!selectWallet.classList.contains('hide'))
+//         selectWallet.classList.add('hide');
+// }
+
+// function noneSelectInOut(){
+//     if(!selectInOut.classList.contains('hide'))
+//         selectInOut.classList.add('hide');
+// }
+
+// btnAdd.addEventListener("click",toggleAddTrans);
+// btnCancel.addEventListener('click', toggleAddTrans);
+// addTrans.addEventListener('click', (e) => {
+//     if(e.target == e.currentTarget) {
+//         toggleAddTrans();
+//         noneSelectCategory();
+//         noneSelectWallet();
+//         noneSelectInOut();
+//     }
+// })
+
 var addTrans = document.querySelector('.add-trans');
 var btnAdd = document.querySelector('.btn-theme');
-var btnCancel = document.querySelector('.btn-cancel');
-function toggleAddTrans(){
-    addTrans.classList.toggle('hide');
-}
+var btnCancel = document.getElementById('btnCancel');
 
-function noneSelectCategory(){
-    if(!categoriesExpense.classList.contains('hide'))
-        categoriesExpense.classList.add('hide');
-    if(!categoriesIncome.classList.contains('hide'))
-        categoriesIncome.classList.add('hide');
-}
-
-function noneSelectWallet(){
-    if(!selectWallet.classList.contains('hide'))
-        selectWallet.classList.add('hide');
-}
-
-function noneSelectInOut(){
-    if(!selectInOut.classList.contains('hide'))
-        selectInOut.classList.add('hide');
-}
-
-btnAdd.addEventListener("click",toggleAddTrans);
-btnCancel.addEventListener('click', toggleAddTrans);
 addTrans.addEventListener('click', (e) => {
-    if(e.target == e.currentTarget) {
-        toggleAddTrans();
-        noneSelectCategory();
-        noneSelectWallet();
-        noneSelectInOut();
+        if(e.target == e.currentTarget) {
+            addTrans.classList.add('hide');
+        }
+})
+
+btnAdd.addEventListener('click', () => {
+    addTrans.classList.remove('hide');
+})
+
+btnCancel.addEventListener('click', () => {
+    addTrans.classList.add('hide');
+})
+
+var CategoriesExpenses = document.getElementById('CategoriesExpenses');
+var CategoriesIncomes = document.getElementById('CategoriesIncomes');
+var selectInOut = document.getElementById('selectInOut');
+
+selectInOut.addEventListener('change', () => {
+    var selectedValue = selectInOut.value;
+    if(selectedValue == 'Income'){
+        CategoriesExpenses.classList.add('hide');
+        CategoriesIncomes.classList.remove('hide');
+    }else if(selectedValue == 'Expense') {
+        CategoriesExpenses.classList.remove('hide');
+        CategoriesIncomes.classList.add('hide');
     }
 })
 
-//Select-Wallet
-var group1 = document.querySelector('.box-trans .group1');
-var selected1 = document.querySelector('.selected1');
-var selectWallet= document.querySelector('.select-wallet');
-var options1 = document.querySelectorAll('.select-wallet .option');
 
-function toggleSelectWallet(){
-    selectWallet.classList.toggle('hide');
-}
+// //Select-Wallet
+// var group1 = document.querySelector('.box-trans .group1');
+// var selected1 = document.querySelector('.selected1');
+// var selectWallet= document.querySelector('.select-wallet');
+// var options1 = document.querySelectorAll('.select-wallet .option input');
 
-group1.addEventListener('click', () => {
-    toggleSelectWallet();
-    noneSelectCategory();
-    noneSelectInOut();
-});
+// function toggleSelectWallet(){
+//     selectWallet.classList.toggle('hide');
+// }
 
-options1.forEach((option) => {
-    option.addEventListener('click', () => {
-        selected1.innerHTML = option.querySelector("label").innerHTML;
-        selectWallet.classList.add('hide');
-    })
-})
+// group1.addEventListener('click', () => {
+//     toggleSelectWallet();
+//     noneSelectCategory();
+//     noneSelectInOut();
+// });
 
-//Select Category
-var group2 = document.querySelector('.box-trans .group2');
-var selected2 = document.querySelector('.selected2');
-var options2 = document.querySelectorAll('.categoriesExpense .option'); //Mảng chứa tất cả các option của Expense
-var options2_2 = document.querySelectorAll('.categoriesIncome .option'); //Mảng chứa tất cả các option của Income
-var categoriesExpense = document.querySelector('.categoriesExpense');
-var categoriesIncome = document.querySelector('.categoriesIncome');
+// options1.forEach((option) => {
+//     option.addEventListener('change', () => {
+//         if(option.checked) {
+//             const labelWallet = document.querySelector(`label[for=${option.id}]`);
+//             if(labelWallet){
+//                 const labelTextWallet = labelWallet.innerHTML;
+//                 selected1.innerHTML = labelTextWallet;
+//             }
+//         }
+//         // selected1.innerHTML = option.querySelector("label").innerHTML;
+//         // console.log(option.querySelector('input').value)
+//         // if (e.target === e.currentTarget){
+//         //     selected1.innerHTML = option.querySelector("label").innerHTML;
+//         //     // selectWallet.classList.add('hide');
+//         // }
+//     })
+// })
 
-var categoriesIncome = document.querySelector(".categoriesIncome");
-var categoriesExpense = document.querySelector(".categoriesExpense");
+// const formData = new FormData();
+// formData.append("divContent", selected1.innerHTML);
 
-        //Select Expense/Income
-        var group0 = document.querySelector('.box-trans .group0');
-        var selectInOut = document.querySelector('.select-inout');
-        var selected0 = document.querySelector('.selected0');
-        var options0 = document.querySelectorAll('.select-inout .option');
+// //Select Category
+// var group2 = document.querySelector('.box-trans .group2');
+// var selected2 = document.querySelector('.selected2');
+// var options2 = document.querySelectorAll('.categoriesExpense .option'); //Mảng chứa tất cả các option của Expense
+// var options2_2 = document.querySelectorAll('.categoriesIncome .option'); //Mảng chứa tất cả các option của Income
+// var categoriesExpense = document.querySelector('.categoriesExpense');
+// var categoriesIncome = document.querySelector('.categoriesIncome');
 
-        function toggleSelectInOut(){
-            selectInOut.classList.toggle('hide');
-        }
+//         //Select Expense/Income
+//         var group0 = document.querySelector('.box-trans .group0');
+//         var selectInOut = document.querySelector('.select-inout');
+//         var selected0 = document.querySelector('.selected0');
+//         var options0 = document.querySelectorAll('.select-inout .option');
 
-        group0.addEventListener('click', () => {
-            toggleSelectInOut();
-            noneSelectCategory();
-            noneSelectWallet();
-        });
+//         function toggleSelectInOut(){
+//             selectInOut.classList.toggle('hide');
+//         }
 
-        options0.forEach((option) => {
-            option.addEventListener('click', () => {
-                selected0.innerHTML = option.querySelector("label").innerHTML;
-                selectInOut.classList.add('hide');
+//         group0.addEventListener('click', () => {
+//             toggleSelectInOut();
+//             noneSelectCategory();
+//             noneSelectWallet();
+//         });
+        
+//         options0.forEach((option) => {
+//             option.addEventListener('click', () => {
+//                 selected0.innerHTML = option.querySelector("label").innerHTML;
+//                 selectInOut.classList.add('hide');
+//                 if(selected0.innerHTML === "Income"){
+//                     group2.addEventListener('click', ()=> {
+//                         if(!categoriesExpense.classList.contains("hide")){
+//                             categoriesExpense.classList.add('hide');
+//                         }
+//                         categoriesIncome.classList.remove('hide');
+//                         noneSelectWallet();
+//                         noneSelectInOut();
+//                     });
+//                 } else if(selected0.innerHTML === "Expense"){
+//                     group2.addEventListener('click', ()=> {
+//                         if(!categoriesIncome.classList.contains("hide")){
+//                             categoriesIncome.classList.add('hide');
+//                         }
+//                         categoriesExpense.classList.remove('hide');
+//                         noneSelectWallet();
+//                         noneSelectInOut();
+//                     });
+//                 }
+//             })
+//         })
 
-                if(selected0.innerHTML === "Income"){
-                    group2.addEventListener('click', ()=> {
-                        if(!categoriesExpense.classList.contains("hide")){
-                            categoriesExpense.classList.add('hide');
-                        }
-                        categoriesIncome.classList.remove('hide');
-                        noneSelectWallet();
-                        noneSelectInOut();
-                    });
-                } else if(selected0.innerHTML === "Expense"){
-                    group2.addEventListener('click', ()=> {
-                        if(!categoriesIncome.classList.contains("hide")){
-                            categoriesIncome.classList.add('hide');
-                        }
-                        categoriesExpense.classList.remove('hide');
-                        noneSelectWallet();
-                        noneSelectInOut();
-                    });
-                }
-            })
-        })
 
+// options2.forEach((option) => {
+//     option.addEventListener('click', (e) => {
+//         selected2.innerHTML = option.querySelector("label").innerHTML;
+//         categoriesExpense.classList.add('hide');
+//     })
+// })
 
-options2.forEach((option) => {
-    option.addEventListener('click', () => {
-        selected2.innerHTML = option.querySelector("label").innerHTML;
-        categoriesExpense.classList.add('hide');
-    })
-})
+// options2_2.forEach((option) => {
+//     option.addEventListener('click', () => {
+//         selected2.innerHTML = option.querySelector("label").innerHTML;
+//         categoriesIncome.classList.add('hide');
+//     })
+// })
 
-options2_2.forEach((option) => {
-    option.addEventListener('click', () => {
-        selected2.innerHTML = option.querySelector("label").innerHTML;
-        categoriesIncome.classList.add('hide');
-    })
-})
+// //icon-close-selectBox
+// var selectBoxs = document.querySelectorAll('.select-box');
+// selectBoxs.forEach((selectBox) => {
+//     selectBox.querySelector('.icon-close-selectBox').addEventListener('click', (e) => {
+//         if(e.target == e.currentTarget)
+//             selectBox.classList.add('hide');
+//     })
+// })
 
-//icon-close-selectBox
-var selectBoxs = document.querySelectorAll('.select-box');
-selectBoxs.forEach((selectBox) => {
-    selectBox.querySelector('.icon-close-selectBox').addEventListener('click', () => {
-        selectBox.classList.add('hide');
-    })
-})
-
-//My-wallets
+    //MY-WALLET
 var contentMain = document.querySelector('.content');
 var My_wallets = document.getElementById('my-wallets');
 var btn_MyWallets = document.querySelector('.account .my-wallets');
@@ -259,11 +304,216 @@ btnSave.addEventListener('click', () => {
     }
 })
 
-//Search date
+//SEARCH DATE
 var search_date = document.querySelector('.search-date');
 var icon_date = document.querySelector('.icon_date .icon');
 
 icon_date.addEventListener('click', () => {
     search_date.classList.toggle('hide');
 })
+
+
+    //MY-CATEGORIES
+var container_listCategory = document.querySelector('.list-category');
+var list_category = document.querySelectorAll('.it-category');
+var categoryDetail = document.querySelector(".category-detail");
+var icon_closeCategoryDetail = document.querySelector('.category-detail .icon-close');
+
+list_category.forEach((it) => {
+    it.addEventListener('click', () => {
+        // container_listCategory.style.marginLeft = '-100px';
+        categoryDetail.classList.remove('hide');
+        // categoryDetail.style.left = '100%';
+        categoryDetail.querySelector('.img-categoryDetail img').src = it.querySelector('.img img').src;
+        categoryDetail.querySelector('.name-categoryDetail').innerHTML = it.querySelector('.name-itCategory').innerHTML;
+        categoryDetail.querySelector(".name-inout").innerHTML = it.parentElement.querySelector('.name-listCategory').innerHTML;
+        if(categoryDetail.querySelector(".name-inout").innerHTML == 'Incomes'){
+            categoryDetail.querySelector(".name-inout").style.backgroundColor = 'blue';
+        }else{
+            categoryDetail.querySelector(".name-inout").style.backgroundColor = 'red';
+        }
+    })
+})
+
+icon_closeCategoryDetail.addEventListener('click', () => {
+    categoryDetail.classList.add('hide');
+})
+
+document.querySelector("#my-categories .icon-comeback").addEventListener('click', () => {
+    document.getElementById('my-categories').classList.add('hide');
+    contentMain.classList.remove('hide');
+    account.classList.add('hide');
+    if(!categoryDetail.classList.contains('hide')) categoryDetail.classList.add('hide');
+})
+
+    //button My-category in icon menu
+var My_categories = document.getElementById('my-categories');
+var btn_MyCategories = document.querySelector('.account .categories');
+btn_MyCategories.addEventListener('click', () => {
+    contentMain.classList.add('hide');
+    My_categories.classList.remove('hide');
+})
+
+    //MY-ACCOUNT
+var myAccount = document.getElementById('my-account');
+var btn_closeAccount = document.querySelector('.icon-closeAccount');
+var btn_MyAccount = document.querySelector('.account .my-account');
+
+btn_closeAccount.addEventListener('click', () => {
+    myAccount.classList.add('hide');
+    contentMain.classList.remove('hide');
+    account.classList.add('hide');
+})
+    
+//button my-account in icon menu
+btn_MyAccount.addEventListener('click', () => {
+    myAccount.classList.remove('hide');
+    account.classList.add('hide');
+})
+
+    //MAIN CONTENT TRANSACTION
+//xu ly khi chua co giao dich nao
+
+//xu ly khi da co giao dich
+//prep data
+let imageCategories = [
+    'https://static.moneylover.me/img/icon/ic_category_foodndrink.png',
+    'https://static.moneylover.me/img/icon/ic_category_transport.png',
+    'https://static.moneylover.me/img/icon/icon_136.png',
+    'https://static.moneylover.me/img/icon/icon_124.png',
+    'https://static.moneylover.me/img/icon/icon_125.png',
+    'https://static.moneylover.me/img/icon/icon_139.png',
+    'https://static.moneylover.me/img/icon/icon_126.png',
+    'https://static.moneylover.me/img/icon/ic_category_doctor.png',
+    'https://static.moneylover.me/img/icon/icon_53.png',
+    'https://static.moneylover.me/img/icon/icon_142.png',
+    'https://static.moneylover.me/img/icon/icon_49.png',
+    'https://static.moneylover.me/img/icon/icon_138.png',
+    'https://static.moneylover.me/img/icon/ic_category_salary.png',
+    'https://static.moneylover.me/img/icon/ic_category_other_income.png'
+];
+
+async function fetchDataCategoryT3(){
+    //prep data from file category json
+    const response = await fetch('../JsonFile/Category.json');
+    const data = await response.json();
+
+    let categoryIDOrigin = data.map((item) => item.categoryID);
+    let categoryNameOrigin = data.map((item) => item.categoryName);
+
+    //prep data from file trans json
+    let days =  [];
+    let categoryIDTrans = [];
+    let amounts = [];
+
+    const response2 = await fetch('../JsonFile/TransactionT3.json');
+    const data2 = await response2.json();
+
+    for(let i = 0; i < data2.length; i++){
+        days.push(data2[i].date.slice(0,2));
+        categoryIDTrans.push(data2[i].categoryID);
+        amounts.push(Number(data2[i].amount));
+    }
+
+    let monthAndYear_ = data2[0].date.slice(3, 10);
+
+    //Tao mang Id có các phần tử khác nhau
+    let categoryIDDiffs = []
+    for(let i = 0; i < categoryIDTrans.length; i++){
+        if(!categoryIDDiffs.includes(categoryIDTrans[i])){
+            categoryIDDiffs.push(categoryIDTrans[i]);
+        }
+    }
+
+    let have_content = document.querySelector('.have-content');
+    // Duyệt từng giao dịch
+    for(let i = 0; i < categoryIDDiffs.length; i++){
+        let transAllowCategory = document.createElement('div');
+        transAllowCategory.classList.add('transAllowCategory');
+
+        if(categoryIDDiffs[i] !== categoryIDDiffs[0]){
+            let Empty = document.createElement('div');
+            Empty.classList.add('Empty');
+            transAllowCategory.appendChild(Empty);
+        }
+        
+
+        let overviewTrans = document.createElement('div');
+        overviewTrans.classList.add('overviewTrans');
+        transAllowCategory.appendChild(overviewTrans);
+
+        let left1 = document.createElement('div');
+        left1.classList.add('left');
+        overviewTrans.appendChild(left1)
+        
+        let img_Category = document.createElement('div');
+        img_Category.classList.add('img-Category');
+        left1.appendChild(img_Category);
+
+        let img = document.createElement('img');
+        img.src = imageCategories[categoryIDDiffs[i]-1]
+        img_Category.appendChild(img);
+
+        let detail = document.createElement('div');
+        detail.classList.add('detail');
+        left1.appendChild(detail);
+
+        let name_category = document.createElement('div');
+        name_category.classList.add('name-category');
+        name_category.innerHTML = categoryNameOrigin[categoryIDDiffs[i]-1];
+        detail.appendChild(name_category);
+
+        let quantity = document.createElement('div');
+        quantity.classList.add('quantity');
+        detail.appendChild(quantity);
+
+        let totalInOverView = document.createElement('p');
+        totalInOverView.classList.add('total');
+        overviewTrans.appendChild(totalInOverView);
+
+        let dem = 0;
+        let total = 0;
+        for(let j = 0; j < categoryIDTrans.length; j++){
+            if(categoryIDTrans[j] == categoryIDDiffs[i]){
+                dem = dem + 1;
+                total = total + amounts[j];
+
+                let itTrans = document.createElement('div');
+                itTrans.classList.add('it-Trans');
+                transAllowCategory.appendChild(itTrans);
+
+                let left2 = document.createElement('div');
+                left2.classList.add('left');
+                itTrans.appendChild(left2);
+
+                let day = document.createElement('p');
+                day.classList.add('day');
+                day.innerHTML = days[j];
+                left2.appendChild(day);
+
+                let monthAndYear = document.createElement('p');
+                monthAndYear.classList.add('monthAndYear');
+                monthAndYear.innerHTML = "T" + monthAndYear_;
+                left2.appendChild(monthAndYear);
+
+                let amountInTrans = document.createElement('p');
+                amountInTrans.classList.add('amount');
+                amountInTrans.innerHTML = amounts[j] + " đ";
+                itTrans.appendChild(amountInTrans);
+            }
+        }
+
+        quantity.innerHTML = dem + " Transactions";
+        totalInOverView.innerHTML = total + " đ";
+        have_content.appendChild(transAllowCategory)
+    }
+}
+
+fetchDataCategoryT3();
+
+
+
+
+
+
 
