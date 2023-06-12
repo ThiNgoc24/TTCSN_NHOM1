@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>About Us</title>
   <style>
     .list-image
     {
@@ -41,7 +41,7 @@ body{
 }
 .card
 {
-  margin: 2%;
+    margin: 2%;
     position: relative;
     width: 250px;
     height: 330px;
@@ -81,7 +81,30 @@ body{
 .imgBx:hover .information{
   display: block !important;
 }
+@media only screen and (max-width: 768px){
+  .list-image > div {
+    flex: 1;
+    /* border-radius: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    transition: all .8s cubic-bezier(.25, .4, .45, 1.4); */
+    
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+    /* min-height: 100vh; */
+}
+  .card{
+    width:100%;
+    height:100vh;
+    margin: 0;
+  }
+}
+
   </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="list-image">

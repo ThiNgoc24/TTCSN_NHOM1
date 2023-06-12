@@ -12,6 +12,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200&family=Roboto:wght@100&display=swap" rel="stylesheet">
 <style>
+    .content {
+        position: relative;
+        margin-top: -5%;
+    }
     .list-image
     {
       display: flex !important;
@@ -38,8 +42,10 @@
     }
     .Container-main{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        /* justify-content: center; */
         align-items: center;
+        margin-top: 50px;
         background: linear-gradient(#3D70FF 0,  #3D70FF 50%, #fff 50%, #fff 100%);
         min-height: 100vh;
     }
@@ -96,6 +102,16 @@
       font-size: 14px;
       margin: 2% 0;
     }
+    .infor {
+        display: flex;
+        flex-direction: column ;
+        align-items: center;
+        width: 50%;
+        text-align: justify;
+        margin-top: 50px;
+
+    }
+    
   </style>
 </head>
 <body>
@@ -178,80 +194,35 @@
         </div>
 
         <!-- Header -->
-        <head>
-            <div class="top">
+        <!-- <head>
+            <div class="top"  style="z-index: 99">
                 <div class="wallet-transaction">
                     <div class="flex-left-toolbar">
                         <div class="show-wallet">
                             <div class="box-menu">
-                                <div class="allet-l-box">
-                                    <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
-                                </div>
-                                <div class="allet-r-box">
-                                    <div class="allet-top">  
-                                            <span class="aa">aa</span>
-                                            <div class="allet-icon">
-                                                <i class="fa-solid fa-caret-down"></i>
-                                            </div>
-                                    </div>
-                                    <div class="allet-bt">
-                                        <p style="font-weight: 700;font-size: 18px;margin-left: 7%;">0 đ</p>
-                                    </div>
-                                    <div class="input-a">
-                                        <div class="select">
-                                            <p>Select Wallet</p>
-                                        </div>
-                                        <br>
-                                        <div class="allet-l-box">
-                                            <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
-                                        </div>
-                                        <div class="allet-r-box">
-                                            <div class="allet-top">  
-                                                    <span class="aa">aa</span>
-                                                    <div class="allet-icon">
-                                                        <i class="fa-solid fa-caret-down"></i>
-                                                    </div>
-                                            </div>
-                                            <div class="allet-bt">
-                                                <p style="font-weight: 700;font-size: 18px;margin-left: 7%;">0 đ</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="aaa">
-                                            <div class="allet-l-box">
-                                                <img src="https://static.moneylover.me/img/icon/icon.png" alt="">
-                                            </div>
-                                            <div class="allet-r-box">
-                                                <div class="allet-top">  
-                                                        <span class="aa">aa</span>
-                                                        <div class="allet-icon">
-                                                            <i class="fa-solid fa-caret-down"></i>
-            
-                                                        </div>
-                                                </div>
-                                                <div class="allet-bt">
-                                                    <p style="font-weight: 700;font-size: 18px;margin-left: 7%;">0 đ</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="us">
+                                    <h3 style="margin-top: 40px;z-index: 99; margin-top: 40px;margin-left: 400px;">About Us</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </head>
-        
+         -->
         <!-- Main-content -->
+
         <div class="Container-main">
+            <h2 style="margin-top: 40px; color: #222121;">About Us</h2>
             <div class="list-image">
+                
                 <div class="card">
-                  <img src="../About/image/anh1.jpg" onclick="toggleInfo('info1')" class="imgBx">
+                  <img src="../About/image/anh1.jpg" onclick="toggleInfo('info1')" class="imgBx" style="position: relative;left: -5%; ">
                   <div id="info1" onclick="toggleInfo('info1')" class="information">
                   <p>Name: Đinh Hồng Liễu</p>
                   <p>StudentCode: 2021601817</p>
-                  <p>Class: HTT01</p>
+                  <p>Class: HTTT01</p>
                   <p>Duty: Font-end</p>
                   <p>Job Future: Tester </p>
                   <p>
@@ -262,11 +233,11 @@
                   </div>
                 </div>
                 <div class="card">
-                  <img src="../About/image/lethingoc.jpg" onclick="toggleInfo('info2')"  class="imgBx">
+                  <img src="../About/image/lethingoc.jpg" onclick="toggleInfo('info2')"  class="imgBx" style="position: relative;left: -8%; ">
                   <div id="info2" onclick="toggleInfo('info2')" class="information">
                   <p>Name: Lê Thị Ngọc</p>
                   <p>StudentCode: 2021601311</p>
-                  <p>Class: HTT01</p>
+                  <p>Class: HTTT01</p>
                   <p>Duty: Front-End</p>
                   <p>Job Future: Web designer <i><i class="fa-solid fa-laptop-code"></i></i> </p>
                   <p>Contact:
@@ -279,11 +250,11 @@
                 </div>
             
                 <div class="card">
-                  <img src="../About/image/Thien-SIP.png" onclick="toggleInfo('info3')" class="imgBx">
+                  <img src="../About/image/Thien-SIP.png" onclick="toggleInfo('info3')" class="imgBx" style="position: relative;left: -10%; ">
                   <div id="info3" onclick="toggleInfo('info3')"class="information">
                     <p>Name: Thân Ngọc Thiện</p>
                     <p>StudentCode: 2021602775</p>
-                    <p>Class: HTT01</p>
+                    <p>Class: HTTT01</p>
                     <p>Duty: Back-end</p>
                     <p>Job Future: Start up <i><i class="fa-solid fa-laptop-code"></i></i> </p>
                     <p>Contact:
@@ -295,13 +266,13 @@
                 </div>
 
                 <div class="card">
-                  <img src="../About/image/thidiepanh.jpg" onclick="toggleInfo('info4')" class="imgBx">
+                  <img src="../About/image/thidiepanh.jpg" onclick="toggleInfo('info4')" class="imgBx" style="position: relative;left: -8%; ">
                   <div id="info4" onclick="toggleInfo('info4')" class="information">
                     <p>Name: Nguyễn Thị Điệp</p>
                     <p>StudentCode: 2021601120</p>
-                    <p>Class: HTT01</p>
-                    <p>Duty: Front-End</p>
-                    <p>Job Future: Write report <i><i class="fa-solid fa-laptop-code"></i></i> </p>
+                    <p>Class: HTTT01</p>
+                    <p>Duty: Write report</p>
+                    <p>Job Future: Web designer <i><i class="fa-solid fa-laptop-code"></i></i> </p>
                     <p>Contact:
                       <p> Email: diepp12112003@gmail.com </p>
                       <p style="display: flex;">Fb: <span><img src="../About/image/qrcode-diep.png" alt="" style="width: 60px; margin:10% 18% "></span></p> 
@@ -314,7 +285,7 @@
                   <div id="info4" onclick="toggleInfo('info4')" class="information">
                     <p>Name: Nguyễn Thị Thúy Dân</p>
                     <p>StudentCode: 2021601846</p>
-                    <p>Class: HTT01</p>
+                    <p>Class: HTTT01</p>
                     <p>Duty: Write Report</p>
                     <p>Job Future: Web developer<i><i class="fa-solid fa-laptop-code"></i></i> </p>
                     <p>Contact:
@@ -326,7 +297,24 @@
             
                 </div>
               </div>
+              <div class="infor">
+                <h2>About Web</h2>
+                <p>Hiện nay trên thế giới nói chung và nước ta nói riêng đang diễn
+                     ra quá trình tin học hóa
+                      toàn diện trên mọi lĩnh vực, hoạt động
+                     của xã hội loài người loài người đang chuyển kỳ nguyên 
+                    của Công nghệ thông tin. Các máy tính đặc biệt là các
+                     máy vi tính xuất hiện khắp nơi, hoặc hỗ trợ hoặc thay thế 
+                     toàn bộ con người thực hiện những công việc do con người giao 
+                     cho thông qua các chương trình máy tính. Một trong những kiến thức
+                      tối thiểu của một con người trong thời đại hiện nay là biết sử dụng máy tính.
+                    Với sự hỗ trợ đắc lực của Công nghệ thông tin, nó đã giúp cho công việc
+                     quản lý ngày càng hiệu quả và dễ dàng xử lý các tình huống, các yêu cầu, đưa ra các con số, và các báo cáo một cách chính xác và nhanh chóng nhất. Bên cạnh đó, nó còn giảm thiểu thời gian rất lớn và công sức để hoàn thành công việc.
+                </p>
+            </div>
         </div>
+
+       
     </div>
 
     <!-- Wallet -->
@@ -405,7 +393,7 @@
             </div>
         </div>
     </div>
-
+  
     
     <script src="./About.js"></script>
     <!-- <script ></script> -->
