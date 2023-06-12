@@ -1,0 +1,58 @@
+[
+  {
+    "categoryID": 1,
+    "categoryName": "Food & Beverage"
+  },
+  {
+    "categoryID": 2,
+    "categoryName": "Transportation"
+  },
+  {
+    "categoryID": 3,
+    "categoryName": "Rentals"
+  },
+  {
+    "categoryID": 4,
+    "categoryName": "Water-Bill"
+  },
+  {
+    "categoryID": 5,
+    "categoryName": "Electricity-Bill"
+  },
+  {
+    "categoryID": 6,
+    "categoryName": "Gas-Bill"
+  },
+  {
+    "categoryID": 7,
+    "categoryName": "Internet-Bill"
+  },
+  {
+    "categoryID": 8,
+    "categoryName": "Medical Check-up"
+  },
+  {
+    "categoryID": 9,
+    "categoryName": "Pets"
+  },
+  {
+    "categoryID": 10,
+    "categoryName": "Out going"
+  },
+  {
+    "categoryID": 11,
+    "categoryName": "Fun money"
+  },
+  {
+    "categoryID": 12,
+    "categoryName": "Other"
+  },
+  {
+    "categoryID": 13,
+    "categoryName": "Salary"
+  },
+  {
+    "categoryID": 14,
+    "categoryName": "Other Income"
+  }
+]
