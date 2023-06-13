@@ -313,6 +313,7 @@ tr td:last-child {
 }
 .options ul li:hover {
     color: green;
+    cursor: pointer;
 }
 .options ul{
     display: flex;
@@ -467,9 +468,6 @@ table td input {
     .cards {
         grid-template-columns: repeat(3, 1fr);
     }
-    .recent-grid {
-        /* grid-template-columns: ; */
-    }
 
 }
 @media only screen and (max-width: 768px){
@@ -503,7 +501,7 @@ table td input {
         border-radius: 5px;
     }
     .options ul li:hover {
-        color: green;
+        color: rgb(101, 196, 101);
     }
     .options ul{
         display: flex;
@@ -606,3 +604,4 @@ table td input {
     }
     
 }
+
