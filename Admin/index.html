@@ -396,7 +396,6 @@
                 <!-- cai edit -->
                 <div id="modal-overlay">
                     <div id="modal">
-                      <!-- <button id="closeButton">Close</button> -->
                       <div class="add-trans hide" id="myDiv" >
                           <div class="content">
                               <div class="card-header">
@@ -418,18 +417,19 @@
                               </div>
                               <div class="edit-img">
                                   <div class="upload">
-                                      <img src="/Admin/image/avt.jpg" width = 130 height="130" alt="">
+                                      <img src="/Admin/image/avt.jpg" width = 130 height="130" alt="" id="profile-pic">
                                       <div class="round">
-                                          <input type="file">
-                                          <i class="fa-solid fa-camera" style="color: #fff;"></i>
-                              
+                                          <input type="file" id="input-file" accept="image/png, image/jpg">
+                                          <i class="fa-solid fa-camera" style="color: #fff;" id="input-file"></i>
                                       </div>
                                   </div>
+
+                                </div>
                                   <div class="upload-background">
-                                      <img src="/Admin/image/img1.jpg" width = 860 height="200" alt="">
+                                      <img src="/Admin/image/img1.jpg" width = 860 height="200" alt="" id="profile-pic2">
                                       <div class="round">
-                                          <input type="file">
-                                          <i class="fa-solid fa-camera" style="color: #fff;"></i>
+                                          <input type="file" id="input-file2" accept="image/png, image/jpg">
+                                          <i class="fa-solid fa-camera" style="color: #fff;" id="input-file2"></i>
                               
                                       </div>
                                   </div>
@@ -446,13 +446,13 @@
                                       </tr>
                                       <tr>
                                           <td>Phone(Optional)</td>
-                                          <td style="padding-left: 60px;"><input type="number" placeholder="123456789"></td>
+                                          <td style="padding-left: 60px;"><input placeholder="123456789"></td>
                                       </tr>
                                   </table>
                               </div>
                               <div class="btn-submit">
                                   <input class="btn btn-cancel" type="button" value="CANCEL" id="closeButton2" onclick="showInfo()">
-                                  <input class="btn btn-save" type="submit" value="SAVE" id="submit">
+                                  <input class="btn btn-save" type="submit" value="SAVE" id="submit" style="padding: 8px 14px;">
                               </div>
                           </div>
                       </div> 
@@ -592,7 +592,19 @@ function showModal(content) {
   // Hiển thị thẻ xuất hiện giữa màn hình
   modalOverlay.style.display = 'block';
 }
+const profilepic = document.getElementById('profile-pic');
+  const inputfile = document.getElementById('input-file');
+  inputfile.onchange = function(){
+profilepic.src = URL.createObjectURL(inputfile.files[0])
+  }
+
+  const profilepic2 = document.getElementById('profile-pic2');
+  const inputfile2 = document.getElementById('input-file2');
+  inputfile2.onchange = function(){
+profilepic2.src = URL.createObjectURL(inputfile2.files[0])
+  }
+
 </script>
-    <!-- <script src="../Admin.js"></script> -->
+    
 </body>
 </html>
