@@ -260,35 +260,6 @@ async function fetchDataCategory(){
         ]
     };
 
-    // var data1 = [{
-    //     data: dataCategoryExpense,
-    //     // labels: labelCategoryExpenses,
-    //     backgroundColor: bgcExpenses,
-    //     borderColor: "#fff",
-    //     // datasets: [
-    //     //     {
-    //     //         label: "Expenses",
-    //     //         backgroundColor: bgcExpenses,
-    //     //         data: dataCategoryExpense,
-    //     //     },
-    //     // ]
-    // }];
-
-    // var options1= {
-    //     tooltip: {
-    //         enabled: true
-    //     },
-
-    //     plugins: {
-    //         datalabels: {
-    //             formatter: (value, myChart3) => {
-    //                 let sum = myChart3.datasets._meta[0].total;
-    //                 let percentage
-    //             }
-    //         }
-    //     }
-    // }
-
     var myPieChar1 = new Chart(myChart3, {
         type: 'pie',
         data: data1,
@@ -301,9 +272,6 @@ async function fetchDataCategory(){
                         size: 20
                     }
                 },
-                // labels:{
-                //     render: 'percentage'
-                // }
             },
         }
     });
@@ -320,37 +288,6 @@ async function fetchDataCategory(){
         ]
     };
 
-  // Cấu hình biểu đồ
-// var options2 = {
-//     plugins:{
-//         tooltip: {
-//             enabled: false
-//         },
-
-//         datalabels: {
-//             formatter: (value, myChart4) => {
-//                 let sum = 0;
-//                 const datapoints = myChart4.Chart.data.datasets[0].data;
-//                 datapoints.map(data => {
-//                     sum += data;
-//                 });
-//                 const percentageValue = (value*100 / sum).toFixed(2) + "%";
-//                 return percentageValue;
-//             },
-//             color: "#fff",
-//         }
-//     },
-//     plugins: {
-//         title: {
-//             display: true,
-//             text: 'Report allow category income',
-//             font: {
-//                 size: 20
-//             }
-//         },
-//     }  
-// };
-
     var myPieChart2 = new Chart(myChart4, {
         type: 'pie',
         data: data3,
@@ -365,7 +302,6 @@ async function fetchDataCategory(){
                 },
             },
         }
-        // options: options2
     });
 }
 

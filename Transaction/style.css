@@ -183,13 +183,17 @@ body{
     width: 50px;
 }
 .allet-r-box{
-    margin-left: 8%;
-    width: 50px;
+    /* margin-left: 8%; */
+    width: 200px;
+    margin-left: 10px;
 }
 .allet-top{
     display: flex;
-    margin-top: 15%;
-    justify-content: space-around;
+    margin-top: 8%;
+}
+
+.allet-top .aa{
+    margin-right: 10px;
 }
 
 .felt-right-toolbar{
@@ -543,114 +547,6 @@ body{
     opacity: 0.8;
     cursor: pointer;
 }
-
-/* Tạo danh sách lựa chọn cho loại dịch vụ */
-/* .add-trans .select-box{
-    width: 350px;
-    background-color: #fff;
-    height: max-content;
-    padding:15px;
-    margin-left: 1px;
-    font-size: 18px;
-    animation: appearenceSelectBox 0.3s linear;
-    position: absolute;
-} */
-
-/* .add-trans .select-inout,
-.add-trans .select-wallet,
-.add-trans .select-category{
-    left: 108%;
-    top: 0;
-    border-radius: 10px;
-} */
-
-/* .select-category .options-container{
-    max-height: 350px;
-    opacity: 1;
-    overflow-y: scroll;
-} */
-
-    /* Tạo hiệu ứng cho thanh cuốn */
-/* .select-category .options-container::-webkit-scrollbar{
-    width: 8px;
-}
-
-.select-category .options-container::-webkit-scrollbar-track{
-    background-color: #ccc;
-    border-radius: 10px;
-}
-
-.select-category .options-container::-webkit-scrollbar-thumb{
-    background-color: gray;
-    border-radius: 100px;
-}
-
-.select-box .head-selectBox{
-    display: flex;
-    font-size: 15px;
-    color: grey; */
-    /* border-bottom: 1px solid #ccc */
-/* }
-
-.head-selectBox .icon-close-selectBox{
-    margin-right: 20px;
-    cursor: pointer;
-}
-
-.select-box .option{
-    padding: 15px;
-    border-bottom: 1px solid #ccc;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.select-box .option:last-child{
-    border-bottom: none;
-}
-
-.option .icon-option{
-    width: 30px;
-    margin-right: 10px;
-}
-
-.option .icon-option img{
-    width: 100%;
-}
-
-.select-box .option:hover{
-    background-color: #f1f1f1;
-}
-
-.select-box .option label{
-    cursor: pointer;
-    width: 100%;
-    padding: 15px;
-}
-
-.btn-submit{
-    margin-top: 25px;
-}
-
-.btn-submit .btn, 
-.detail-wallet .btns .btn{
-    background-color: rgba(0,0,0,.1);
-    padding: 8px;
-    color: #3D70FF;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 14px;
-}
-
-.btn-submit .btn:hover, 
-.detail-wallet .btn:hover{
-    opacity: 0.8;
-    cursor: pointer;
-}
-
-.FoodAndBeverage{
-    display: flex;
-} */
 
 .container{
     width: 80%;
